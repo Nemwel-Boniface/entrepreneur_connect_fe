@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+}
+
+body {
+  position: relative;
+  background: var(--white);
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 17px;
+}
+
+a {
+  font-size: 17px;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  /* Shall contain the tablet version styles  */
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  /* Shall contain the desktop version styles  */
+}
