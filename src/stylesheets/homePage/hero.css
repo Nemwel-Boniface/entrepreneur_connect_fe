@@ -15,10 +15,8 @@
   width: 100%;
   padding: 5%;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 }
 
 .hero .heroLeft h2 {
@@ -61,13 +59,101 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
+  .heroRight img {
+    display: block;
+  }
+
   .hero {
+    padding: 5% 8%;
     background-image: none;
+    background-color: var(--herobg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 90vh;
+    color: var(--titleblue);
+  }
+
+  .heroLeft,
+  .heroRight {
+    flex: 1; 
+    padding: 20px;  
+  }
+
+  .hero .heroLeft h2 {
+    margin: 1.5rem 0;
+    font-size: 35px;
+  }
+  
+  .hero .heroLeft p {
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  .hero .heroRight img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .hero .heroLeft button {
+    background-color: var(--lightgreen);
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .5s;
+  }
+  
+  .hero .heroLeft button:hover {
+    background: #fff;
+    color: var(--lightgreen);
+    border: 1px solid var(--lightgreen);
+  }
+  
+  .hero .heroLeft button:active {
+    background-color: var(--lightgreen);
+    color: #fff;
   }
 }
 
 /* Desktop versions now */
 
 @media screen and (min-width: 1080px) {
-  /* Shall contain the desktop version styles  */
+  .hero {
+    padding: 5% 10%;
+    background-image: none;
+    background-color: var(--herobg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 90vh;
+    color: var(--titleblue);
+  }
+
+  .heroLeft,
+  .heroRight {
+    flex: 1; 
+    padding: 30px;  
+  }
+
+  .hero .heroLeft h2 {
+    margin: 2rem 0;
+    font-size: 50px;
+  }
+  
+  .hero .heroLeft p {
+    margin: 1.5rem 0;
+    font-size: 20px;
+  }
+
+  .hero .heroLeft button {
+    padding: 15px;
+    font-size: 20px;
+  }
 }
