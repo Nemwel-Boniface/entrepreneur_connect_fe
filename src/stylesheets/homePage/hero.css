@@ -1,0 +1,73 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --superlightgreen: rgba(44, 188, 100, .8);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+}
+
+.hero {
+  background: linear-gradient(var(--superlightgreen), var(--superlightgreen)) ,url('../../images/fourentrepreneurs.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  padding: 5%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .heroLeft h2 {
+  margin: 1rem 0;
+  font-size: 30px;
+}
+
+.hero .heroLeft p {
+  margin: 1rem 0;
+  font-size: 18pxpx;
+}
+
+.hero .heroLeft button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.hero .heroLeft button:hover {
+  background: var(--lightgreen);
+  color: #fff;
+  border: 1px solid var(--lightgreen);
+}
+
+.hero .heroLeft button:active {
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--lightgreen);
+}
+
+.heroRight img {
+  display: none;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .hero {
+    background-image: none;
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  /* Shall contain the desktop version styles  */
+}

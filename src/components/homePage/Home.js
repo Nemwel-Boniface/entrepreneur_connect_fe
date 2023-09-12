@@ -1,13 +1,10 @@
 import React from "react";
-import AboutUs from "./About";
-import ContactUs from "./ContactUs";
+import HeroBg from "./Hero";
 
 const Home = () => {
   return (
     <div className="HomeComponent">
-      This is the Home component
-      <AboutUs />
-      <ContactUs />
+      <HeroBg />
     </div>
   )
 };
