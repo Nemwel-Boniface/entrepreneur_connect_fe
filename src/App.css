@@ -38,12 +38,22 @@ a {
   font-size: 17px;
 }
 
+.sectionHeader {
+  text-align: center;
+  color: var(--titleblue);
+  margin: 1rem 0;
+  font-size: 25px;
+}
+
 /* Responsive design now */
 
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
-  /* Shall contain the tablet version styles  */
+  .sectionHeader {
+    margin: 1.5rem 0;
+    font-size: 35px;
+  }
 }
 
 /* Desktop versions now */

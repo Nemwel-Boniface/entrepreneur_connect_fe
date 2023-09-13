@@ -1,4 +1,5 @@
 import './stylesheets/homePage/hero.css';
+import './stylesheets/homePage/features.css';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/homePage/Home';
