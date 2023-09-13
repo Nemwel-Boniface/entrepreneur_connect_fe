@@ -47,7 +47,7 @@ const Features = () => {
       <div className="featureImage">
         <img src={feature.featureImg} alt="" />
         <div className="overlay"></div>
-        <div className="overLayDesc00">
+        <div className="overLayDesc">
           <h3>{feature.featureOverLayTitle}</h3>
           <p>{feature.featureOverLayDesc}</p>
         </div>

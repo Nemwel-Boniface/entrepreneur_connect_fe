@@ -1,0 +1,94 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --superlightgreen: rgba(44, 188, 100, .8);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+}
+
+.FeaturesComponent {
+  padding: 5%;
+  color: var(--titleblue);
+}
+
+.FeaturesComponent .featuresTop {
+  margin: 1rem 0;
+}
+
+.FeaturesComponent .featuresTop h2 {
+  margin: .7rem 0;
+}
+
+.FeaturesComponent .featuresTop p {
+  margin: .7rem 0;
+}
+
+.FeaturesComponent .featuresImages .featureImage {
+  margin: 1rem 0;
+  position: relative;
+}
+
+.FeaturesComponent .featuresImages .featureImage img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  margin: .7rem 0;
+  height: 400px;
+}
+
+.FeaturesComponent .featuresImages .featureImage .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: linear-gradient(rgba(0,0,0,0.6), var(--lightgreen));
+  opacity: 0;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.FeaturesComponent .featuresImages .featureImage .overLayDesc {
+  width: 80%;
+  position: absolute;
+    /*bottom: 40%;  use this when you dont want to hide the text on hover*/
+  opacity: 0;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 1s;
+}
+
+.FeaturesComponent .featuresImages .featureImage:hover .overlay {
+    opacity: 1;
+}
+.FeaturesComponent .featuresImages .featureImage:hover .overLayDesc {
+    bottom: 25%;
+    opacity: 1;
+    color: #fff;
+}
+
+.overLayDesc h3 {
+  margin: .5rem 0;
+  font-size: 25px;
+}
+
+.overLayDesc p {
+  font-size: 18px;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  /* Shall contain the tablet version styles  */
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  /* Shall contain the desktop version styles  */
+}
