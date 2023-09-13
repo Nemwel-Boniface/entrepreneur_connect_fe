@@ -84,11 +84,54 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
-  /* Shall contain the tablet version styles  */
+  .FeaturesComponent {
+    padding: 8%;
+  }
+
+  .featuresTop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .featuresImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 /* Desktop versions now */
 
 @media screen and (min-width: 1080px) {
-  /* Shall contain the desktop version styles  */
+  .FeaturesComponent {
+    padding: 10%;
+  }
+
+  .featuresTop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .FeaturesComponent .featuresTop p {
+    font-size: 22px;
+  }
+
+  .featuresImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .overLayDesc h3 {
+    margin: .5rem 0;
+    font-size: 35px;
+  }
+  
+  .overLayDesc p {
+    font-size: 20px;
+  }
 }
