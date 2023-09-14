@@ -92,7 +92,7 @@
 .aboutUsBottom div ul li {
   color: var(--paragraphGray);
   margin: .5rem 0 .5rem 1rem;
-  list-style-position: ;
+  /* list-style-position: ; */
   /* padding: 3%; */
 }
 
@@ -103,11 +103,63 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
+  .AboutUsComponent {
+    padding: 5% 8%;
+  }
+
+  .aboutUsTop .aboutUsTopLeft h2 {
+    font-size: 35px;
+  }
   
+  .aboutUsTop .aboutUsTopLeft p {
+    font-size: 20px;
+  }
+
+  .aboutUsMiddle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .aboutUsMiddle div h3 {
+    font-size: 35px;
+  }
+  
+  .aboutUsMiddle div p {
+    font-size: 18px;
+  }
+
+  .aboutUsBottom div h2 {
+    font-size: 35px;
+  }
+
+  .aboutUsBottom div p, li {
+    font-size: 18px;
+  }
 }
 
 /* Desktop versions now */
 
 @media screen and (min-width: 1080px) {
-  /* Shall contain the desktop version styles  */
+  .AboutUsComponent {
+    padding: 5% 10%;
+  }
+
+  .aboutUsTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .aboutUsMiddle div {
+    padding: 10%;
+  }
+
+  .aboutUsBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
 }
