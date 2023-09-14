@@ -85,7 +85,7 @@
 
 @media screen and (min-width: 748px) {
   .FeaturesComponent {
-    padding: 8%;
+    padding: 5% 8%;
   }
 
   .featuresTop {
@@ -106,7 +106,7 @@
 
 @media screen and (min-width: 1080px) {
   .FeaturesComponent {
-    padding: 10%;
+    padding: 5% 10%;
   }
 
   .featuresTop {
