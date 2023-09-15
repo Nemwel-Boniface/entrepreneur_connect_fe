@@ -152,6 +152,12 @@
     align-items: center;
   }
 
+  .aboutUsMiddle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
   .aboutUsMiddle div {
     padding: 10%;
   }
