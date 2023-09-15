@@ -1,0 +1,112 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+  --navyBlue: rgba(2, 58, 81, 1)
+}
+
+.ContactUsComponent {
+  padding: 5%;
+}
+
+.contactUsWrapper {
+  padding: 5%;
+  background-color: var(--navyBlue);
+  color: #fff;
+}
+
+/* Style for the contact us left section/ block */
+
+.contactUsLeft {
+  -ms-behavior: 1rem 0;
+}
+
+.contactUsLeft h2 {
+  margin: .7rem 0;
+  text-align: center;
+}
+
+.contactUsLeft div {
+  margin: .7rem 0;
+}
+
+.contactUsLeft div h3 {
+  margin: .5rem 0;
+  text-align: center;
+}
+
+.contactUsLeft div h3 i {
+  margin: 0 .5rem 0 0;
+  font-size: 20px;
+}
+
+.contactUsLeft div p {
+  margin: .5rem 0;
+}
+
+/* Style the contact us right/ form */
+
+.contactUsRight {
+  margin: 1rem 0;
+}
+
+.contactUsRight div input {
+  width: 100%;
+  margin: .5rem 0;
+  padding: 8px;
+}
+
+.contactUsRight textarea {
+  width: 100%;
+  height: 180px;
+  margin: .5rem 0;
+  padding: 8px;
+}
+
+.contactUsRight button {
+  border: none;
+  outline: none;
+  margin: .5rem 0;
+  padding: 10px;
+  border: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: var(--lightgreen);
+}
+
+.contactUsRight button i {
+  margin: 0 .5rem 0 0;
+  font-size: 20px;
+}
+
+.contactUsRight button:hover {
+  border: 1px solid var(--lightgreen);
+  background: #fff;
+  cursor: pointer;
+  transition: .5s;
+  color: var(--lightgreen);
+}
+
+.contactUsRight button:active {
+  color: #fff;
+  background: var(--lightgreen);
+}
+
+
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+
+}
