@@ -3,6 +3,7 @@ import HeroBg from "./Hero";
 import Features from "./Features";
 import AboutUs from "./About";
 import ContactUs from "./ContactUs";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <AboutUs />
       <Features />
       <ContactUs />
+      <Footer />
     </div>
   )
 };
