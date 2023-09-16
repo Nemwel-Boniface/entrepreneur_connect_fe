@@ -37,6 +37,7 @@
 
 .footerTop div ul li a {
   text-decoration: none;
+  color: var(--titleblue);
 }
 
 .footerTop div ul li a:hover {
@@ -55,6 +56,27 @@
 .footerTopRight ul li a{
   margin: 0 1rem 0 0;
   font-size: 22px;
+}
+
+/* Designed by */
+
+.footerWrappper .desgnedby {
+  text-align: center;
+}
+
+.footerWrappper .desgnedby p i {
+  color: #c80815;
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.footerWrappper .desgnedby p a {
+  text-decoration: none;
+  color:  var(--lightgreen);
+}
+
+.footerWrappper .desgnedby p a:hover {
+  font-weight: bold;
 }
 
 /* Responsive design now */

@@ -31,6 +31,9 @@ const Footer = () => {
             </ul>
           </div>
         </article>
+        <div class="desgnedby">
+          <p>Designed with <i class="fa fa-heart" aria-hidden="true"></i> By <a href="https://www.linkedin.com/in/nemwel-nyandoro" target="_blank">Nemwel.</a></p>
+        </div>
       </section>
     </footer>
   )
