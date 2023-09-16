@@ -9,6 +9,7 @@
 .footerComponent {
   padding: 5%;
   background-color: var(--herobg);
+  color: var(--titleblue);
 }
 
 .footerTop div {
@@ -61,11 +62,45 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
-  
+  .footerComponent {
+    padding: 5% 8%;
+  }
+
+  .footerTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footerTop div h3 {
+    margin: 1rem 0;
+    font-size: 30px;
+  }
+
+  .footerTop div p {
+    font-size: 18px;
+  }
 }
 
 /* Desktop versions now */
 
 @media screen and (min-width: 1080px) {
+  .footerComponent {
+    padding: 5% 10%;
+  }
 
+  .footerTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footerTop div h3 {
+    margin: 1.5rem 0;
+    font-size: 35px;
+  }
+
+  .footerTop div p {
+    font-size: 19px;
+  }
 }
