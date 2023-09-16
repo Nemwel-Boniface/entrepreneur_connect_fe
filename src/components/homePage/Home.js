@@ -4,10 +4,12 @@ import Features from "./Features";
 import AboutUs from "./About";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
+import NavBar from "../Navbar";
 
 const Home = () => {
   return (
     <div className="HomeComponent">
+      <NavBar />
       <HeroBg />
       <AboutUs />
       <Features />
