@@ -1,0 +1,71 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.footerComponent {
+  padding: 5%;
+  background-color: var(--herobg);
+}
+
+.footerTop div {
+  margin: 1rem 0;
+}
+
+.footerTop div h3 {
+  margin: .5rem 0;
+}
+
+.footerTop div p {
+  margin: .5rem 0;
+}
+
+.footerTop div ul {
+  margin: .5rem 0;
+}
+
+.footerTop div ul li {
+  list-style-type: none;
+  margin: .4rem 0;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.footerTop div ul li a {
+  text-decoration: none;
+}
+
+.footerTop div ul li a:hover {
+  color: var(--lightgreen);
+}
+
+.footerTop div ul li a:active {
+  color: var(--titleblue);
+}
+
+.footerTopRight ul {
+  display: flex;
+  align-items: center;
+}
+
+.footerTopRight ul li a{
+  margin: 0 1rem 0 0;
+  font-size: 22px;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+
+}
