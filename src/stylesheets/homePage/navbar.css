@@ -1,0 +1,102 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+
+.header {
+  padding: 5%;
+  position: absolute;
+  top: 1rem;
+}
+
+/* .header .navbar .mobileheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dekstopNavbarItems {
+  display: none;
+} */
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .header {
+    padding: 0 8%;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+
+  .desktopNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+  }
+
+  .desktopNav h3 a {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--titleblue);
+  }
+
+  .desktopNav h3 a .greenText {
+    color: var(--lightgreen);
+  }
+
+  .desktopNav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktopNav ul li {
+    list-style-type: none;
+    margin-left: 1.5rem;
+  }
+
+  .desktopNav ul li a {
+    text-decoration: none;
+    color: var(--titleblue);
+    font-size: 18px;
+  }
+  
+  .desktopNav ul li a:hover {
+    color: var(--lightgreen);
+  }
+  
+  .desktopNav ul li a:active {
+    color: var(--titleblue);
+  }
+
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .header {
+    padding: 1rem 10%;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+
+  .desktopNav h3 a {
+    font-size: 35px;
+  }
+
+  .desktopNav ul li a {
+    text-decoration: none;
+    color: var(--titleblue);
+    font-size: 20px;
+  }
+}
