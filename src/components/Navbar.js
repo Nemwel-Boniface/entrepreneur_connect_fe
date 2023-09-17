@@ -33,10 +33,10 @@ const NavBar = () => {
           isActive ? 
           (
             <ul className="mobileNavbarItems">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Merch</a></li>
+          <li><a href="#" onClick={removeActive}>Home</a></li>
+          <li><a href="#" onClick={removeActive}>About</a></li>
+          <li><a href="#" onClick={removeActive}>Contact</a></li>
+          <li><a href="#" onClick={removeActive}>Merch</a></li>
         </ul>
           ) : ""
         }        
