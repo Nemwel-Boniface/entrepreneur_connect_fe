@@ -1,13 +1,13 @@
 :root {
   --titleblue: rgba(2, 59, 86, 1);
   --lightgreen: rgba(44, 188, 100, 1);
-  --superlightgreen: rgba(44, 188, 100, .8);
+  --superlightgreen: rgba(44, 188, 100, 0.8);
   --herobg: rgba(225, 236, 240, 1);
   --white: rgba(244, 246, 250, 1);
 }
 
 .hero {
-  background: linear-gradient(var(--superlightgreen), var(--superlightgreen)) ,url('../../images/fourentrepreneurs.jpg');
+  background: linear-gradient(var(--superlightgreen), var(--superlightgreen)), url('../../images/fourentrepreneurs.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@
 
 .hero .heroLeft p {
   margin: 1rem 0;
-  font-size: 18pxpx;
+  font-size: 18px;
 }
 
 .hero .heroLeft button {
@@ -35,7 +35,7 @@
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .hero .heroLeft button:hover {
@@ -77,15 +77,15 @@
 
   .heroLeft,
   .heroRight {
-    flex: 1; 
-    padding: 20px;  
+    flex: 1;
+    padding: 20px;
   }
 
   .hero .heroLeft h2 {
     margin: 1.5rem 0;
     font-size: 35px;
   }
-  
+
   .hero .heroLeft p {
     margin: 1rem 0;
     font-size: 18px;
@@ -106,15 +106,15 @@
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
   }
-  
+
   .hero .heroLeft button:hover {
     background: #fff;
     color: var(--lightgreen);
     border: 1px solid var(--lightgreen);
   }
-  
+
   .hero .heroLeft button:active {
     background-color: var(--lightgreen);
     color: #fff;
@@ -138,15 +138,15 @@
 
   .heroLeft,
   .heroRight {
-    flex: 1; 
-    padding: 30px;  
+    flex: 1;
+    padding: 30px;
   }
 
   .hero .heroLeft h2 {
     margin: 2rem 0;
     font-size: 50px;
   }
-  
+
   .hero .heroLeft p {
     margin: 1.5rem 0;
     font-size: 20px;

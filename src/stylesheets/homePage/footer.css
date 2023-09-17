@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 :root {
   --titleblue: rgba(2, 59, 86, 1);
   --lightgreen: rgba(44, 188, 100, 1);
@@ -17,22 +18,22 @@
 }
 
 .footerTop div h3 {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .footerTop div p {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .footerTop div ul {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .footerTop div ul li {
   list-style-type: none;
-  margin: .4rem 0;
+  margin: 0.4rem 0;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .footerTop div ul li a {
@@ -53,7 +54,7 @@
   align-items: center;
 }
 
-.footerTopRight ul li a{
+.footerTopRight ul li a {
   margin: 0 1rem 0 0;
   font-size: 22px;
 }
@@ -72,7 +73,7 @@
 
 .footerWrappper .desgnedby p a {
   text-decoration: none;
-  color:  var(--lightgreen);
+  color: var(--lightgreen);
 }
 
 .footerWrappper .desgnedby p a:hover {

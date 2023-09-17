@@ -1,7 +1,8 @@
+/* stylelint-disable no-descending-specificity */
 :root {
   --titleblue: rgba(2, 59, 86, 1);
   --lightgreen: rgba(44, 188, 100, 1);
-  --superlightgreen: rgba(44, 188, 100, .8);
+  --superlightgreen: rgba(44, 188, 100, 0.8);
   --herobg: rgba(225, 236, 240, 1);
   --white: rgba(244, 246, 250, 1);
 }
@@ -16,11 +17,11 @@
 }
 
 .FeaturesComponent .featuresTop h2 {
-  margin: .7rem 0;
+  margin: 0.7rem 0;
 }
 
 .FeaturesComponent .featuresTop p {
-  margin: .7rem 0;
+  margin: 0.7rem 0;
 }
 
 .FeaturesComponent .featuresImages .featureImage {
@@ -32,7 +33,7 @@
   width: 100%;
   max-width: 100%;
   object-fit: cover;
-  margin: .7rem 0;
+  margin: 0.7rem 0;
   height: 400px;
 }
 
@@ -40,20 +41,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000;
   width: 100%;
   height: 100%;
   cursor: pointer;
-  background: linear-gradient(rgba(0,0,0,0.6), var(--lightgreen));
+  background: linear-gradient(rgba(0, 0, 0, 0.6), var(--lightgreen));
   opacity: 0;
   transition: 1s;
-  cursor: pointer;
 }
 
 .FeaturesComponent .featuresImages .featureImage .overLayDesc {
   width: 80%;
   position: absolute;
-    /*bottom: 40%;  use this when you dont want to hide the text on hover*/
+
+  /* bottom: 40%;  use this when you dont want to hide the text on hover */
   opacity: 0;
   bottom: 10%;
   left: 50%;
@@ -62,16 +62,17 @@
 }
 
 .FeaturesComponent .featuresImages .featureImage:hover .overlay {
-    opacity: 1;
+  opacity: 1;
 }
+
 .FeaturesComponent .featuresImages .featureImage:hover .overLayDesc {
-    bottom: 25%;
-    opacity: 1;
-    color: #fff;
+  bottom: 25%;
+  opacity: 1;
+  color: #fff;
 }
 
 .overLayDesc h3 {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   font-size: 25px;
 }
 
@@ -115,7 +116,7 @@
     align-items: center;
     gap: 30px;
   }
-  
+
   .FeaturesComponent .featuresTop p {
     font-size: 22px;
   }
@@ -127,10 +128,10 @@
   }
 
   .overLayDesc h3 {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     font-size: 35px;
   }
-  
+
   .overLayDesc p {
     font-size: 20px;
   }
