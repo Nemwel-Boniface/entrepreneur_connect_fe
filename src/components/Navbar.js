@@ -16,19 +16,19 @@ const NavBar = () => {
 
   return (
     <header className="header">
-      <nav className="navbar">
-        <a href="#" className="logo">
-          <small>Entrepreneur</small>
-          <small>Connect</small>
-        </a>
+      <nav className="mobilenavbar">
+        <div className="mobileheader">
+          <h3>
+            <a href="#" className="logo">
+              <small className="greenText">Entrepreneur</small>
+              <small>Connect</small>
+            </a>
+          </h3>
 
-        <ul className="dekstopNavbarItems">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Merch</a></li>
-        </ul>
-
+          <button className="menu" onClick={toggleActiveClass} type="button">
+            <i className="fa fa-bars" aria-hidden="true" />
+          </button>
+        </div>
         {
           isActive ? 
           (
@@ -39,11 +39,22 @@ const NavBar = () => {
           <li><a href="#">Merch</a></li>
         </ul>
           ) : ""
-        }
+        }        
+      </nav>
 
-        <button className="menu" onClick={toggleActiveClass} type="button">
-          <i className="fa fa-bars" aria-hidden="true" />
-        </button>
+      <nav className="desktopNav">
+        <h3>
+          <a href="#" className="logo">
+            <small className="greenText">Entrepreneur</small>
+            <small>Connect</small>
+          </a>
+        </h3>
+        <ul className="desktopNavbarItems">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Merch</a></li>
+        </ul>
       </nav>
     </header>
     // <div className="NavBarComponent">
