@@ -11,28 +11,112 @@
   padding: 5%;
   position: absolute;
   top: 1rem;
+  width: 100%;
+  z-index: 1;
 }
 
-/* .header .navbar .mobileheader {
+.desktopNav {
+  display: none;
+}
+
+.mobileheader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
-.dekstopNavbarItems {
-  display: none;
-} */
+.mobileheader h3 a {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 25px;
+}
+
+.mobileheader button {
+  border: none;
+  outline: none;
+  padding: 2px 7px;
+  color: var(--lightgreen);
+  font-size: 18px;
+  background: #fff;
+}
+
+.mobileheader button i {
+  font-size: 20px;
+}
+
+.mobileheader button:hover {
+  border: 1px solid #fff;
+  background: var(--lightgreen);
+  cursor: pointer;
+  transition: .5s;
+  color: #fff;
+}
+
+.mobileheader button:active {
+  color: var(--lightgreen);
+  background: #fff;
+}
+
+/* Mobile menu items */
+
+.mobileNavbarItems {
+  text-align: right;
+  padding: 20% 10%;
+  background-color: #fff;
+  margin-top: 1rem;
+  margin-right: 5%;
+  position: fixed;
+  right: 0;
+  max-width: 100%;
+  /* width: 100%; */
+}
+
+.mobileNavbarItems li {
+  list-style-type: none;
+  margin: .5rem 0;
+}
+
+.mobileNavbarItems li {
+  list-style-type: none;
+  margin: .4rem 0;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.mobileNavbarItems li a {
+  text-decoration: none;
+  color: var(--titleblue);
+}
+
+.mobileNavbarItems li a:hover {
+  color: var(--lightgreen);
+}
+
+.mobileNavbarItems li a:active {
+  color: var(--titleblue);
+}
+
 
 /* Responsive design now */
 
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
+  .mobilenavbar {
+    display: none;
+  }
+
   .header {
     padding: 0 8%;
     position: absolute;
     top: 1rem;
     width: 100%;
+  }
+
+  .desktopNav {
+    display: block;
   }
 
   .desktopNav {
