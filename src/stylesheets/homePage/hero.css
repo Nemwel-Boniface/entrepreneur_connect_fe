@@ -1,0 +1,159 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --superlightgreen: rgba(44, 188, 100, 0.8);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+}
+
+.hero {
+  background: linear-gradient(var(--superlightgreen), var(--superlightgreen)), url('../../images/fourentrepreneurs.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  padding: 25% 5% 5% 5%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.hero .heroLeft h2 {
+  margin: 1rem 0;
+  font-size: 30px;
+}
+
+.hero .heroLeft p {
+  margin: 1rem 0;
+  font-size: 18px;
+}
+
+.hero .heroLeft button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.hero .heroLeft button:hover {
+  background: var(--lightgreen);
+  color: #fff;
+  border: 1px solid var(--lightgreen);
+}
+
+.hero .heroLeft button:active {
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--lightgreen);
+}
+
+.heroRight img {
+  display: none;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .heroRight img {
+    display: block;
+  }
+
+  .hero {
+    padding: 6% 8% 5% 8%;
+    background-image: none;
+    background-color: var(--herobg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 95vh;
+    color: var(--titleblue);
+  }
+
+  .heroLeft,
+  .heroRight {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .hero .heroLeft h2 {
+    margin: 1.5rem 0;
+    font-size: 35px;
+  }
+
+  .hero .heroLeft p {
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  .hero .heroRight img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .hero .heroLeft button {
+    background-color: var(--lightgreen);
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .hero .heroLeft button:hover {
+    background: #fff;
+    color: var(--lightgreen);
+    border: 1px solid var(--lightgreen);
+  }
+
+  .hero .heroLeft button:active {
+    background-color: var(--lightgreen);
+    color: #fff;
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .hero {
+    padding: 10% 10% 5% 10%;
+    background-image: none;
+    background-color: var(--herobg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
+    color: var(--titleblue);
+  }
+
+  .heroLeft,
+  .heroRight {
+    flex: 1;
+    padding: 30px;
+  }
+
+  .hero .heroLeft h2 {
+    margin: 2rem 0;
+    font-size: 50px;
+  }
+
+  .hero .heroLeft p {
+    margin: 1.5rem 0;
+    font-size: 20px;
+  }
+
+  .hero .heroLeft button {
+    padding: 15px;
+    font-size: 20px;
+  }
+}

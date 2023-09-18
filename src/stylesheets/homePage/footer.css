@@ -1,0 +1,129 @@
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.footerComponent {
+  padding: 5%;
+  background-color: var(--herobg);
+  color: var(--titleblue);
+}
+
+.footerTop div {
+  margin: 1rem 0;
+}
+
+.footerTop div h3 {
+  margin: 0.5rem 0;
+}
+
+.footerTop div p {
+  margin: 0.5rem 0;
+}
+
+.footerTop div ul {
+  margin: 0.5rem 0;
+}
+
+.footerTop div ul li {
+  list-style-type: none;
+  margin: 0.4rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.footerTop div ul li a {
+  text-decoration: none;
+  color: var(--titleblue);
+}
+
+.footerTop div ul li a:hover {
+  color: var(--lightgreen);
+}
+
+.footerTop div ul li a:active {
+  color: var(--titleblue);
+}
+
+.footerTopRight ul {
+  display: flex;
+  align-items: center;
+}
+
+.footerTopRight ul li a {
+  margin: 0 1rem 0 0;
+  font-size: 22px;
+}
+
+/* Designed by */
+
+.footerWrappper .desgnedby {
+  text-align: center;
+}
+
+.footerWrappper .desgnedby p i {
+  color: #c80815;
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.footerWrappper .desgnedby p a {
+  text-decoration: none;
+  color: var(--lightgreen);
+}
+
+.footerWrappper .desgnedby p a:hover {
+  font-weight: bold;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .footerComponent {
+    padding: 5% 8%;
+  }
+
+  .footerTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footerTop div h3 {
+    margin: 1rem 0;
+    font-size: 30px;
+  }
+
+  .footerTop div p {
+    font-size: 18px;
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .footerComponent {
+    padding: 5% 10%;
+  }
+
+  .footerTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footerTop div h3 {
+    margin: 1.5rem 0;
+    font-size: 35px;
+  }
+
+  .footerTop div p {
+    font-size: 19px;
+  }
+}

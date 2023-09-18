@@ -1,72 +1,89 @@
-# entrepreneur_connect_fe
 
-# Getting Started with Create React App
+# Enrepreneur Connect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Entrepreneur Connect is a platform that helps entrepreneurs connect with each other, find potential partners, collaborate on projects, and grow their businesses. We believe that entrepreneurs are stronger when they work together, and we provide the tools and resources they need to succeed.
 
-## Available Scripts
 
-In the project directory, you can run:
+This project upon completion will have the following features:
+- [ ] The User profile page
+- [x] A home page/ landing page
+- [ ] User Authentication (Login/ signup)
+- [ ] Investor's view - Accounts created as investors will have a view unique to them where they will be able to see available entrepreneurs who need funding/ collaboration
+- [ ] Entrepreneurs view - accounts created as entrepreneurs will have their own unique view where they will be able to view available investors and their interests. They will also see other entrepreneurs who might be looking for collaboration partners
+- [ ] Events view - People can create events and invite people to attend their events.
+- [ ] The feeds view which will contain posts that were created by other people whom they follow
+- [ ] Will feature the following feature - You can add more people to your network by following them.
+- [ ] Create blogs/ posts feature. People will be able to create blogs/ posts and then share them to their network.
+- [ ] A notifications feature.When someone creates a blog/ post a notification should be sent to their network.
+- [ ] Comment and like feature on a post created.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is still a work in progress and the features will be included one by one. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Enjoy!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+- CRA
+- CSS for styling
+- stylelint for CSS linter checks
+- Eslint for Javascript linter checks
+- React Testing Library for unit tests of the components
+- React router to handle multiple-page rendering of the application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run eject`
+## Install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In your terminal, navigate to your current directory and run this code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`git@github.com:Nemwel-Boniface/entrepreneur_connect_fe.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Locate the directory in your file explorer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`cd entrepreneur_connect_fe`
 
-## Learn More
+Install npm or if installed already using this link
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the web dev server depending on your configuration
 
-### Code Splitting
+`npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Project should now be live on your browser
 
-### Analyzing the Bundle Size
+## Tests
+To run your tests you can run:
+- `npm test` for unit tests with the React testing library & Jest
+- `npx eslint .` for all your JavaScript based linter checks
+- `npx stylelint "**/*.{css,scss}"` for all your CSS based linter checks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+👤 **Author1**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@Nemwel-Boniface ](https://github.com/Nemwel-Boniface)
+- Twitter: [@nemwel_bonie](https://twitter.com/nemwel_bonie)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nemwel-nyandoro-aa1b2620b/)
 
-### Advanced Configuration
+👤 **Author2**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- GitHub: [@ChrisOnsando ](https://github.com/ChrisOnsando/)
+- Twitter: [@Chriskiki_](https://twitter.com/Chriskiki_)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chrisonsando/)
 
-### Deployment
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Feel free to check the [issues page](https://github.com/Nemwel-Boniface/entrepreneur_connect_fe/issues).
 
-### `npm run build` fails to minify
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

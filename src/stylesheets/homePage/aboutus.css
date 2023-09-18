@@ -1,0 +1,165 @@
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --superlightgreen: rgba(44, 188, 100, 0.8);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.AboutUsComponent {
+  padding: 5%;
+  color: var(--titleblue);
+}
+
+.AboutUsComponent .aboutUsBody div {
+  margin: 1.5rem 0;
+}
+
+/* About us top section/ block */
+
+.aboutUsTop div {
+  margin: 1rem 0;
+}
+
+.aboutUsTop .aboutUsTopLeft h2 {
+  margin: 0.5rem 0;
+}
+
+.aboutUsTop .aboutUsTopLeft p {
+  margin: 0.5rem 0;
+  color: var(--paragraphGray);
+}
+
+.aboutUsTop .aboutUsTopRight img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* About us middle section section/ block */
+
+.aboutUsMiddle div {
+  margin: 0.5rem 0;
+  padding: 5%;
+  box-shadow: -1px -1px 15px 2px rgba(192, 181, 181, 1);
+  border-radius: 9px;
+  transition: transform 0.5s;
+}
+
+.aboutUsMiddle div img {
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.aboutUsMiddle div h3 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 25px;
+}
+
+.aboutUsMiddle div p {
+  color: var(--paragraphGray);
+}
+
+/* About us bottom section section/ block */
+
+.aboutUsBottom div {
+  margin: 0.5rem 0;
+}
+
+.aboutUsBottom div img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.aboutUsBottom div h2 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 25px;
+}
+
+.aboutUsBottom div p {
+  color: var(--paragraphGray);
+  margin: 0.5rem 0;
+}
+
+.aboutUsBottom div ul li {
+  color: var(--paragraphGray);
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .AboutUsComponent {
+    padding: 5% 8%;
+  }
+
+  .aboutUsTop .aboutUsTopLeft h2 {
+    font-size: 35px;
+  }
+
+  .aboutUsTop .aboutUsTopLeft p {
+    font-size: 20px;
+  }
+
+  .aboutUsMiddle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .aboutUsMiddle div h3 {
+    font-size: 35px;
+  }
+
+  .aboutUsMiddle div p {
+    font-size: 18px;
+  }
+
+  .aboutUsBottom div h2 {
+    font-size: 35px;
+  }
+
+  .aboutUsBottom div p,
+  li {
+    font-size: 18px;
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .AboutUsComponent {
+    padding: 5% 10%;
+  }
+
+  .aboutUsTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .aboutUsMiddle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .aboutUsMiddle div {
+    padding: 10%;
+  }
+
+  .aboutUsBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+}

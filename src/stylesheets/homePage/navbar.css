@@ -1,0 +1,173 @@
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.header {
+  padding: 5%;
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.mobileheader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+.mobileheader h3 a {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 25px;
+}
+
+.mobileheader button {
+  border: none;
+  outline: none;
+  padding: 2px 7px;
+  color: var(--lightgreen);
+  font-size: 18px;
+  background: #fff;
+}
+
+.mobileheader button i {
+  font-size: 20px;
+}
+
+.mobileheader button:hover {
+  border: 1px solid #fff;
+  background: var(--lightgreen);
+  cursor: pointer;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.mobileheader button:active {
+  color: var(--lightgreen);
+  background: #fff;
+}
+
+/* Mobile menu items */
+
+.mobileNavbarItems {
+  text-align: right;
+  padding: 20% 10%;
+  background-color: #fff;
+  margin-top: 1rem;
+  margin-right: 5%;
+  position: fixed;
+  right: 0;
+  max-width: 100%;
+}
+
+.mobileNavbarItems li {
+  list-style-type: none;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.mobileNavbarItems li a {
+  text-decoration: none;
+  color: var(--titleblue);
+}
+
+.mobileNavbarItems li a:hover {
+  color: var(--lightgreen);
+}
+
+.mobileNavbarItems li a:active {
+  color: var(--titleblue);
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .mobilenavbar {
+    display: none;
+  }
+
+  .header {
+    padding: 0 8%;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+
+  .desktopNav {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktopNav h3 a {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--titleblue);
+  }
+
+  .desktopNav h3 a .greenText {
+    color: var(--lightgreen);
+  }
+
+  .desktopNav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktopNav ul li {
+    list-style-type: none;
+    margin-left: 1.5rem;
+  }
+
+  .desktopNav ul li a {
+    text-decoration: none;
+    color: var(--titleblue);
+    font-size: 18px;
+  }
+
+  .desktopNav ul li a:hover {
+    color: var(--lightgreen);
+  }
+
+  .desktopNav ul li a:active {
+    color: var(--titleblue);
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .header {
+    padding: 1rem 10%;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+
+  .desktopNav h3 a {
+    font-size: 35px;
+  }
+
+  .desktopNav ul li a {
+    text-decoration: none;
+    color: var(--titleblue);
+    font-size: 20px;
+  }
+}

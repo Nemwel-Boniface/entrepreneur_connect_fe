@@ -1,39 +1,64 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+body {
+  position: relative;
+  background: var(--white);
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 17px;
+}
+
+a {
+  font-size: 17px;
+}
+
+.sectionHeader {
   text-align: center;
+  color: var(--titleblue);
+  margin: 1rem 0;
+  font-size: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Responsive design now */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .sectionHeader {
+    margin: 1.5rem 0;
+    font-size: 35px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* Desktop versions now */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (min-width: 1080px) {
+  /* Shall contain the desktop version styles  */
 }
