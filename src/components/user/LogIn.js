@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const LogIn = () => {
-  return (
-    <div className="LogInComponent">
-      This is the LogIn component
-    </div>
-  )
-};
+const LogIn = () => (
+  <div className="LogInComponent">
+    This is the LogIn component
+  </div>
+);
 
 export default LogIn;
