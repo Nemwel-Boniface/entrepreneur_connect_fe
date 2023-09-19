@@ -6,7 +6,7 @@ const initialState = {
   success: false,
 }
 
-const signUpSlice = {
+const signUpSlice = createSlice({
   name: "User signup",
   initialState,
   reducers: {
@@ -23,7 +23,7 @@ const signUpSlice = {
       state.error = action.payload;
     }
   }
-};
+});
 
 export const { signUpRequest, signUpSuccess, signUpFailure } = signUpSlice.actions;
 
