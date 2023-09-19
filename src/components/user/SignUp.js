@@ -4,9 +4,9 @@ import { signUpRequest, signUpSuccess, signUpFailure } from '../../redux/user/si
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.SignUp.loading);
-  const success = useSelector((state) => state.SignUp.success);
-  const error = useSelector((state) => state.SignUp.error);
+  const loading = useSelector((state) => state.signUp.loading);
+  const success = useSelector((state) => state.signUp.success);
+  const error = useSelector((state) => state.signUp.error);
 
   const [ formData, setFormData ] = useState({
     email: "",
@@ -44,9 +44,44 @@ const SignUp = () => {
       dispatch(setToken(authToken)); // Assuming you have a setToken action
     } catch (error) {
       // Handle errors during the fetch request or error responses from the API
-      dispatch(signupFailure(error.message)); // Dispatch a failure action with the error message
+      dispatch(signUpFailure(error.message)); // Dispatch a failure action with the error message
     }
   }
+
+  return (
+    <section className='signUpComponent'>
+      {loading && <p>Signing up...</p>}
+      {error && <p>Error: {error}</p>}
+      {success && <p>Signup successful!</p>}
+
+      <form className='signUpForm' onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="User Name"
+          value={formData.username}
+          onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+        />
+
+        <input
+          type="email"
+          placeholder="your Email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+        />
+        
+        <button type="submit" disabled={loading}>
+          Signup
+        </button>
+      </form>
+    </section>
+  )
 }
 
 export default SignUp;

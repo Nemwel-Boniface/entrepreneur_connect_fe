@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const signUpSlice = createSlice({
-  name: "User signup",
+  name: "signup",
   initialState,
   reducers: {
     signUpRequest: (state) => {
@@ -30,4 +30,4 @@ const signUpSlice = createSlice({
 
 export const { signUpRequest, signUpSuccess, signUpFailure } = signUpSlice.actions;
 
-export default signUpSlice.reducers;
+export default signUpSlice.reducer;
