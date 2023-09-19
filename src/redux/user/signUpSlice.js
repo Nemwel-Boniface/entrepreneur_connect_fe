@@ -21,7 +21,10 @@ const signUpSlice = createSlice({
     signUpFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
-    }
+    },
+    setToken: (state, action) => {
+      state.token = action.payload;
+    },
   }
 });
 
