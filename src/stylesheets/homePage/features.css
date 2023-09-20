@@ -115,10 +115,12 @@
     justify-content: space-around;
     align-items: center;
     gap: 30px;
+    place-items: center;
   }
 
   .FeaturesComponent .featuresTop p {
-    font-size: 22px;
+    font-size: 19px;
+    place-items: center;
   }
 
   .featuresImages {
