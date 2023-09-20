@@ -28,6 +28,6 @@ const signUpSlice = createSlice({
   }
 });
 
-export const { signUpRequest, signUpSuccess, signUpFailure } = signUpSlice.actions;
+export const { signUpRequest, signUpSuccess, signUpFailure, setToken } = signUpSlice.actions;
 
 export default signUpSlice.reducer;

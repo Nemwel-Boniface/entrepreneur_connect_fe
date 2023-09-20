@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUpRequest, signUpSuccess, signUpFailure } from '../../redux/user/signUpSlice';
+import { signUpRequest, signUpSuccess, signUpFailure, setToken } from '../../redux/user/signUpSlice';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const SignUp = () => {
     dispatch(signUpRequest());
 
     try {
-      const response = await fetch("API URL", {
+      const response = await fetch("http://127.0.0.1:8000/api/user/register/", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -31,11 +31,13 @@ const SignUp = () => {
         // Handle non-successful response (HTTP status code other than 200-299)
         const errorData = await response.json(); // Parse the response JSON
         throw new Error(errorData.message); // Throw an error with the error message from the API
+        console.log(errorData.message);
       }
       // If the response is successful (HTTP status code 200-299), continue here
       const responseData = await response.json(); // Parse the response JSON
-      const authToken = responseData.token; // Assuming the token is in the response
-
+      const authToken = responseData.access; // Assuming the token is in the response
+      console.log("response data" + authToken)
+      
       // Save the token to localStorage
       localStorage.setItem("authToken", authToken);
 
