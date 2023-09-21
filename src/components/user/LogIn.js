@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logInRequest, logInSuccess, logInFailure, logOut } from '../../redux/user/logInSlice';
+import { Link } from 'react-router-dom';
+import loginImg from '../../images/user/login.png';
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -77,6 +79,8 @@ const LogIn = () => {
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           />
 
+          <Link to="/">Forgot password?</Link>
+
           <button type="submit" disabled={loading}>
             Login
           </button>
@@ -91,7 +95,32 @@ const LogIn = () => {
 
   return (
     <section className="loginComponent">
-      {renderLoginForm()}
+      <article className='loginWrapper'>
+        <div className='loginLeft'>
+          <div className='logInLeftHeader'>
+            <h3>
+              <small className="greenText">Entrepreneur</small>
+              <small>Connect</small>
+            </h3>
+            <Link to="/">Home</Link>
+          </div>
+
+          <div className='loginFormWrapper'>
+            <h3>Welcome Back!</h3>
+            <p>Thank you for being a part of Entrepreneur Connect.</p>
+            {renderLoginForm()}
+
+            <div className='signUpLInk'>
+              <p>Don't have an account?</p>
+              <Link to="/signup">Sign Up</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className='loginRight'>
+          <img src={loginImg} alt="" />
+        </div>
+      </article>
     </section>
   );
 }

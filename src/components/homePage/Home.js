@@ -8,7 +8,7 @@ import NavBar from '../Navbar';
 
 const Home = () => (
   <div className="HomeComponent">
-    {/* <NavBar /> */}
+    <NavBar />
     <HeroBg />
     <AboutUs />
     <Features />
