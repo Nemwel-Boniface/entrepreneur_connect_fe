@@ -168,7 +168,35 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
+  .loginComponent {
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  .loginWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .loginWrapper .loginLeft {
+    /* padding: 10%; */
+  }
+
+  .loginRight {
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    background-color: var(--lightgreen);
+  }
+
+  .loginWrapper .loginRight {
+    padding: 5%;
+  }
   
+  .loginWrapper .loginRight img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
 }
 
 /* Desktop versions now */
