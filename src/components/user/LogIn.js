@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logInRequest, logInSuccess, logInFailure, logOut } from '../../redux/user/logInSlice';
 import { Link } from 'react-router-dom';
-import loginImg from '../../images/user/login.png';
+import loginImg from '../../images/user/login-removebg-preview.png';
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -79,15 +79,15 @@ const LogIn = () => {
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           />
 
-          <Link to="/">Forgot password?</Link>
+          <p><Link to="/">Forgot password?</Link></p>
 
           <button type="submit" disabled={loading}>
             Login
           </button>
 
-          {loading && <p>Logging in...</p>}
-          {failure && <p>Error: {error}</p>}
-          {success && <p>Login successful!</p>}
+          {loading && <p className='yellow'>Logging in...</p>}
+          {failure && <p className='red'>Error: {error}</p>}
+          {success && <p className='green'>Login successful!</p>}
         </form>
       );
     }
@@ -102,7 +102,7 @@ const LogIn = () => {
               <small className="greenText">Entrepreneur</small>
               <small>Connect</small>
             </h3>
-            <Link to="/">Home</Link>
+            <Link to="/"><i class="fa fa-arrow-left" aria-hidden="true"></i>Home</Link>
           </div>
 
           <div className='loginFormWrapper'>

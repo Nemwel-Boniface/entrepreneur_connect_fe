@@ -39,6 +39,18 @@ a {
   font-size: 17px;
 }
 
+.yellow {
+  color: rgba(247, 219, 7, 1);
+}
+
+.red {
+  color: rgba(255, 0, 0, 1);
+}
+
+.green {
+  color: var(--lightgreen);
+}
+
 .sectionHeader {
   text-align: center;
   color: var(--titleblue);
