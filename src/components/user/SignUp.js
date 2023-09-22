@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpRequest, signUpSuccess, signUpFailure, setToken } from '../../redux/user/signUpSlice';
+import signUpImg from '../../images/user/signup-removebg-preview.png'
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -50,13 +52,10 @@ const SignUp = () => {
     }
   }
 
-  return (
-    <section className='signUpComponent'>
-      {loading && <p>Signing up...</p>}
-      {error && <p>Error: {error}</p>}
-      {success && <p>Signup successful!</p>}
-
-      <form className='signUpForm' onSubmit={handleSubmit}>
+  const signUpForm = () => {
+    return (
+      <section className='signUpComponent'>
+      <form className='signUpForm loginForm' onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="User Name"
@@ -79,9 +78,45 @@ const SignUp = () => {
         />
         
         <button type="submit" disabled={loading}>
-          Signup
+          Sign up
         </button>
+
+        {loading && <p className='yellow'>Signing up...</p>}
+        {error && <p className='red'>Error: {error}</p>}
+        {success && <p className='green'>Signup successful!</p>}
       </form>
+    </section>
+    )
+  }
+
+  return (
+    <section className="loginComponent">
+      <article className='loginWrapper'>
+        <div className='loginLeft'>
+          <div className='logInLeftHeader'>
+            <h3>
+              <small className="greenText">Entrepreneur</small>
+              <small>Connect</small>
+            </h3>
+            <Link to="/"><i class="fa fa-arrow-left" aria-hidden="true"></i>Home</Link>
+          </div>
+
+          <div className='loginFormWrapper'>
+            <h3>Sign Up</h3>
+            <p>Join the Entrepreneur Connect community today!</p>
+            {signUpForm()}
+
+            <div className='signUpLInk'>
+              <p>Already have an account?</p>
+              <Link to="/login">Log In</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className='loginRight'>
+          <img src={signUpImg} alt="" />
+        </div>
+      </article>
     </section>
   )
 }

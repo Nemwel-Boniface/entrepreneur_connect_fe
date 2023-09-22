@@ -178,8 +178,8 @@
     flex-direction: row;
   }
 
-  .loginWrapper .loginLeft {
-    /* padding: 10%; */
+  .loginWrapper div {
+    flex: 1;
   }
 
   .loginRight {
