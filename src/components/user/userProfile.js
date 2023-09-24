@@ -32,45 +32,37 @@ const CurrentUserProfile = () => {
 
         <div className="userProfileBottom">
           <div className="userProfileBottomItem">
-            <div className="userProfileBottomItemLeft">
+            <Link to="/">
               <p><i class="fa fa-user" aria-hidden="true"></i> Account Information</p>
-            </div>
-            <div className="userProfileBottomItemRight">
               <p><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-            </div>
+            </Link>
           </div>
 
           <div className="userProfileBottomItem">
-            <div className="userProfileBottomItemLeft">
+            <Link to="/">
               <p><i class="fa fa-cog" aria-hidden="true"></i> Settings</p>
-            </div>
-            <div className="userProfileBottomItemRight">
               <p><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-            </div>
+            </Link>
           </div>
 
           <div className="userProfileBottomItem">
-            <div className="userProfileBottomItemLeft">
+            <Link to="/">
               <p><i class="fa fa-bookmark" aria-hidden="true"></i> Bookmarks</p>
-            </div>
-            <div className="userProfileBottomItemRight">
               <p><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-            </div>
+            </Link>
           </div>
 
           <div className="userProfileBottomItem">
-            <div className="userProfileBottomItemLeft">
+            <Link to="/">
               <p><i class="fa fa-clock-o" aria-hidden="true"></i> Recent Activity</p>
-            </div>
-            <div className="userProfileBottomItemRight">
               <p><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-            </div>
+            </Link>
           </div>
 
           <div className="userProfileBottomItem">
-            <div className="userProfileBottomItemLeft">
+            <Link to="/">
               <p><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</p>
-            </div>
+            </Link>
           </div>
         </div>
       </article>
