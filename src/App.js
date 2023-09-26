@@ -13,6 +13,7 @@ import LogIn from './components/user/LogIn';
 import SignUp from './components/user/SignUp';
 import NavBar from './components/Navbar';
 import CurrentUserProfile from './components/user/userProfile';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path='/userProfile' element={<CurrentUserProfile />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   );
