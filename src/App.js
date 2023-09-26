@@ -7,6 +7,7 @@ import './stylesheets/homePage/navbar.css';
 import './stylesheets/user/login.css';
 import './stylesheets/user/currentUserProfile.css'
 import './App.css';
+import './stylesheets/notfound.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/homePage/Home';
 import LogIn from './components/user/LogIn';
