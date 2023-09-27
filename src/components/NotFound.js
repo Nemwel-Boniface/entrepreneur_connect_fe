@@ -9,7 +9,8 @@ const NotFound = () => {
         <img src={hamster} alt="" />
       </div>
       <div className="NotFoundRight">
-        <h1>Shhh...Error 404!</h1>
+        <h1>Shhh...
+          Error 404!</h1>
         <p>Oops, it seems our entrepreneurial hamster took a coffee break ☕️ and wandered off to brainstorm its next big idea! 🐹💡</p>
         <p>While our little genius is away, why not explore our other wild pages? Who knows, you might stumble upon your next Eureka moment! 🚀✨</p>
         <p>While our entrepreneurial hamster naps, here's some wisdom: 'Happiness is the key to success. Love what you do, and you'll find it.' 🌟</p>
