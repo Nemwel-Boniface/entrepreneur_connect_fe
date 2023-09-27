@@ -5,7 +5,7 @@ import ourMission from '../../images/aboutus/ourMission.png';
 import ourVision from '../../images/aboutus/OurVision.png';
 
 const AboutUs = () => (
-  <section className="AboutUsComponent">
+  <section className="AboutUsComponent" id='AboutUs'>
     <div className="sectionHeader">
       <h3>Who are we?</h3>
     </div>
