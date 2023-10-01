@@ -1,0 +1,206 @@
+
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --superlightgreen: rgba(44, 188, 100, 0.8);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.loginComponent {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: var(--lightgreen);
+}
+
+.loginWrapper .loginLeft {
+  padding: 5%;
+  background-color: #fff;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+}
+
+.logInLeftHeader {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* The login header part */
+
+.logInLeftHeader h3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.logInLeftHeader h3 .greenText {
+  color: var(--lightgreen);
+}
+
+.logInLeftHeader a {
+  text-decoration: none;
+  color: var(--titleblue);
+}
+
+.logInLeftHeader a:hover {
+  color: var(--lightgreen);
+}
+
+.logInLeftHeader a:active {
+  color: var(--titleblue);
+}
+
+.logInLeftHeader a i {
+  margin-right: 5px;
+}
+
+/* The login left body from "welcome back" */
+
+.loginFormWrapper > h3,
+p {
+  margin: 0.5rem 0;
+}
+
+/* Login right */
+
+.loginWrapper .loginRight {
+  padding: 10%;
+}
+
+.loginWrapper .loginRight img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* The form now */
+
+.loginForm input {
+  margin: 0.5rem 0;
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--titleblue);
+}
+
+.loginForm p {
+  text-align: right;
+}
+
+.loginForm p a {
+  text-decoration: none;
+  color: var(--titleblue);
+}
+
+.loginForm p a:hover {
+  color: var(--lightgreen);
+}
+
+.loginForm p a:active {
+  color: var(--titleblue);
+}
+
+.loginForm p a i {
+  margin-right: 5px;
+}
+
+.loginForm button {
+  width: 100%;
+  border: none;
+  outline: none;
+  margin: 0.5rem 0;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: var(--lightgreen);
+}
+
+.loginForm button i {
+  margin: 0 0 0 0.5rem;
+  font-size: 20px;
+}
+
+.loginForm button:hover {
+  border: 1px solid var(--lightgreen);
+  background: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--lightgreen);
+}
+
+.loginForm button:active {
+  color: #fff;
+  background: var(--lightgreen);
+}
+
+.signUpLInk {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signUpLInk a {
+  text-decoration: underline;
+  color: var(--titleblue);
+}
+
+.signUpLInk a:hover {
+  color: var(--lightgreen);
+}
+
+.signUpLInk a:active {
+  color: var(--titleblue);
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .loginComponent {
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  .loginWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .loginWrapper div {
+    flex: 1;
+  }
+
+  .loginRight {
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    background-color: var(--lightgreen);
+  }
+
+  .loginWrapper .loginRight {
+    padding: 5%;
+  }
+
+  .loginWrapper .loginRight img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Desktop versions now */
+@media screen and (min-width: 1080px) {
+  /* Desktop version */
+}

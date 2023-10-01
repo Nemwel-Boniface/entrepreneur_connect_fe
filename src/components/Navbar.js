@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isActive, setActive] = useState(false);
@@ -31,10 +31,11 @@ const NavBar = () => {
           isActive
             ? (
               <ul className="mobileNavbarItems">
-                <li><a href="#hero" onClick={removeActive}>Home</a></li>
-                <li><a href="#hero" onClick={removeActive}>About</a></li>
-                <li><a href="#hero" onClick={removeActive}>Contact</a></li>
-                <li><a href="#hero" onClick={removeActive}>Merch</a></li>
+                <li><Link to="/" onClick={removeActive}>Home</Link></li>
+                <li><a href="#AboutUs" onClick={removeActive}>About</a></li>
+                <li><a href="#ContactUs" onClick={removeActive}>Contact</a></li>
+                <li><Link to="/login" onClick={removeActive}>Log In</Link></li>
+                <li><Link to="/signup" onClick={removeActive}>Sign Up</Link></li>
               </ul>
             ) : ''
         }
@@ -48,17 +49,18 @@ const NavBar = () => {
           </a>
         </h3>
         <ul className="desktopNavbarItems">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#home">About</a></li>
-          <li><a href="#home">Contact</a></li>
-          <li><a href="#home">Merch</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><a href="#AboutUs">About</a></li>
+          <li><a href="#ContactUs">Contact</a></li>
+          <li><Link to="login">Log In</Link></li>
+          <li><Link to="signup">Sign Up</Link></li>
         </ul>
       </nav>
     </header>
     // <div className="NavBarComponent">
-    //   <Link to="/">Home</Link>
-    //   <Link to="login">Log In</Link>
-    //   <Link to="signup">Sign Up</Link>
+  // <Link to="/">Home</Link>
+  // <Link to="login">Log In</Link>
+  // <Link to="signup">Sign Up</Link>
     // </div>
   );
 };

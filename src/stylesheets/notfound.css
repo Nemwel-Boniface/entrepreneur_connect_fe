@@ -1,0 +1,96 @@
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.NotFound {
+  padding: 5%;
+  width: 100%;
+}
+
+.NotFoundLeft {
+  margin: 1rem 0;
+}
+
+.NotFoundLeft img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.NotFoundRight h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem;
+  color: var(--lightgreen);
+}
+
+.NotFoundRight p {
+  margin: 1rem 0;
+}
+
+.NotFoundRight button {
+  border: none;
+  outline: none;
+  margin: 0.5rem 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  background: var(--lightgreen);
+}
+
+.NotFoundRight button i {
+  margin: 0 0 0 0.5rem;
+  font-size: 20px;
+}
+
+.NotFoundRight button:hover {
+  border: 1px solid var(--lightgreen);
+  background: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--lightgreen);
+}
+
+.NotFoundRight button:active {
+  color: #fff;
+  background: var(--lightgreen);
+}
+
+.NotFoundRight button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.NotFoundRight button a i {
+  margin-right: 1rem;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .NotFound {
+    padding: 5% 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  .NotFound {
+    padding: 5% 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}

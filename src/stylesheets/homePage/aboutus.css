@@ -78,7 +78,6 @@
 .aboutUsBottom div h2 {
   text-align: center;
   margin: 0.5rem 0;
-  font-size: 25px;
 }
 
 .aboutUsBottom div p {
@@ -105,7 +104,7 @@
   }
 
   .aboutUsTop .aboutUsTopLeft p {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .aboutUsMiddle {
@@ -119,7 +118,7 @@
   }
 
   .aboutUsMiddle div p {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .aboutUsBottom div h2 {
@@ -128,7 +127,7 @@
 
   .aboutUsBottom div p,
   li {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactUs = () => (
-  <section className="ContactUsComponent">
+  <section className="ContactUsComponent" id="ContactUs">
     <article className="contactUsWrapper">
       <div className="contactUsLeft">
         <h2>Do you have any questions?</h2>

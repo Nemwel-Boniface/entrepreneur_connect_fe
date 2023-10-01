@@ -76,10 +76,6 @@
   font-size: 25px;
 }
 
-.overLayDesc p {
-  font-size: 18px;
-}
-
 /* Responsive design now */
 
 /* Tablet version */
@@ -115,10 +111,12 @@
     justify-content: space-around;
     align-items: center;
     gap: 30px;
+    place-items: center;
   }
 
   .FeaturesComponent .featuresTop p {
-    font-size: 22px;
+    font-size: 19px;
+    place-items: center;
   }
 
   .featuresImages {
