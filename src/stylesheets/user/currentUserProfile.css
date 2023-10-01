@@ -21,7 +21,6 @@
 
 .currentUserProfileWrapper {
   padding: 5%;
-  
 }
 
 .currentUserProfileWrapper .userProfileTop {
@@ -41,7 +40,7 @@
 
 .currentUserProfileWrapper .userProfileTop p {
   font-weight: bolder;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 /* The user stats */
@@ -49,7 +48,7 @@
 .userProfileMiddle {
   /* margin: 1rem auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);*/
+  grid-template-columns: repeat(3, 1fr); */
   max-width: 100%;
   margin: 1rem 0;
   display: flex;
@@ -62,7 +61,7 @@
 }
 
 .userProfileBottomItem a {
-  margin: .7rem 0;
+  margin: 0.7rem 0;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -79,17 +78,16 @@
 }
 
 .userProfileBottomItem a p i {
-  margin-right: .6rem;
+  margin-right: 0.6rem;
   color: var(--lightgreen);
 }
-
 
 /* Responsive design now */
 
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
-
+  /* Tablet version */
 }
 
 /* Desktop versions now */

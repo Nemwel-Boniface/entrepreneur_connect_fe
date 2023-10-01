@@ -76,12 +76,12 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
- .NotFound {
-  padding: 5% 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
- }
+  .NotFound {
+    padding: 5% 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
 }
 
 /* Desktop versions now */
@@ -92,5 +92,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-   }
+  }
 }

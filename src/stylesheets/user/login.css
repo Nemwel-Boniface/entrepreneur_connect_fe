@@ -29,7 +29,7 @@
 }
 
 .logInLeftHeader {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   display: flex;
   justify-content: space-between;
 }
@@ -64,8 +64,9 @@
 
 /* The login left body from "welcome back" */
 
-.loginFormWrapper > h3, p {
-  margin: .5rem 0;
+.loginFormWrapper > h3,
+p {
+  margin: 0.5rem 0;
 }
 
 /* Login right */
@@ -83,7 +84,7 @@
 /* The form now */
 
 .loginForm input {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   width: 100%;
   padding: 8px;
   outline: none;
@@ -191,7 +192,7 @@
   .loginWrapper .loginRight {
     padding: 5%;
   }
-  
+
   .loginWrapper .loginRight img {
     width: 100%;
     max-width: 100%;
@@ -200,7 +201,6 @@
 }
 
 /* Desktop versions now */
-
 @media screen and (min-width: 1080px) {
-  
+  /* Desktop version */
 }
