@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isActive, setActive] = useState(false);
@@ -58,9 +58,9 @@ const NavBar = () => {
       </nav>
     </header>
     // <div className="NavBarComponent">
-      // <Link to="/">Home</Link>
-      // <Link to="login">Log In</Link>
-      // <Link to="signup">Sign Up</Link>
+  // <Link to="/">Home</Link>
+  // <Link to="login">Log In</Link>
+  // <Link to="signup">Sign Up</Link>
     // </div>
   );
 };

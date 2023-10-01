@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   loading: false,
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const logInSlice = createSlice({
-  name: "login",
+  name: 'login',
   initialState,
   reducers: {
     logInRequest: (state) => {
@@ -31,10 +31,12 @@ const logInSlice = createSlice({
       state.success = false;
       state.isLoggedIn = false;
       state.token = null;
-    }
-  }
-})
+    },
+  },
+});
 
-export const { logInRequest, logInSuccess, logInFailure, logOut } = logInSlice.actions;
+export const {
+  logInRequest, logInSuccess, logInFailure, logOut,
+} = logInSlice.actions;
 
 export default logInSlice.reducer;
