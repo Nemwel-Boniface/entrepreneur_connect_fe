@@ -6,6 +6,8 @@ import './stylesheets/homePage/footer.css';
 import './stylesheets/homePage/navbar.css';
 import './stylesheets/user/login.css';
 import './stylesheets/user/currentUserProfile.css';
+import './stylesheets/feed/feed.css'
+import './stylesheets/feed/feedNavBar.css'
 import './App.css';
 import './stylesheets/notfound.css';
 import { Routes, Route } from 'react-router-dom';
