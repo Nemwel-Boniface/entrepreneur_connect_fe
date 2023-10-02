@@ -14,6 +14,7 @@ import LogIn from './components/user/LogIn';
 import SignUp from './components/user/SignUp';
 import CurrentUserProfile from './components/user/userProfile';
 import NotFound from './components/NotFound';
+import Feed from './components/feed/Feed';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="/userProfile" element={<CurrentUserProfile />} />
+        <Route path='/feed' element={<Feed />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import userProfilePic from '../../images/user/defaultUserIcon.png';
 
 const FeedNavBar = () => {
@@ -8,8 +8,8 @@ const FeedNavBar = () => {
       <nav className="navbar">
         <div className="feedNavBarLeft">
           <Link className="followrequests" to="/"><i class="fa fa-heart" aria-hidden="true"></i></Link>
-          <LInk className="notifications" to="/"><i class="fa fa-bell" aria-hidden="true"></i></LInk>
-          <LInk className="messages" to="/"><i class="fa fa-envelope" aria-hidden="true"></i></LInk>
+          <Link className="notifications" to="/"><i class="fa fa-bell" aria-hidden="true"></i></Link>
+          <Link className="messages" to="/"><i class="fa fa-envelope" aria-hidden="true"></i></Link>
         </div>
         <div className="feedNavBarRight">
           <form className="formFeedSearch">

@@ -8,3 +8,5 @@ const Feed = () => {
     </section>
   )
 }
+
+export default Feed;
