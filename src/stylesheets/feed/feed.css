@@ -23,6 +23,11 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
   }
+
+  .feedLeft, .FeedRight {
+    background-color: var(--herobg);
+    height: 100%;
+  }
 }
 
 /* Desktop versions now */
