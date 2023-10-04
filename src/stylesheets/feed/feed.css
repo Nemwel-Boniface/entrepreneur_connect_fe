@@ -28,6 +28,10 @@
     background-color: var(--herobg);
     height: 100%;
   }
+
+  .FeedMiddle {
+    padding: 5%;
+  }
 }
 
 /* Desktop versions now */

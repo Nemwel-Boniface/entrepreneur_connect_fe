@@ -8,6 +8,8 @@ import './stylesheets/user/login.css';
 import './stylesheets/user/currentUserProfile.css';
 import './stylesheets/feed/feed.css'
 import './stylesheets/feed/feedNavBar.css'
+import './stylesheets/feed/post.css'
+import './stylesheets/feed/posts.css'
 import './App.css';
 import './stylesheets/notfound.css';
 import { Routes, Route } from 'react-router-dom';
