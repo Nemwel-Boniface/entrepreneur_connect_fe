@@ -1,9 +1,10 @@
 import React from "react";
+import Posts from "./Posts";
 
 const FeedMiddle = () => {
   return (
     <section className="FeedMiddle">
-      <h2>The Feed Middle section</h2>
+      <Posts />
     </section>
   )
 }
