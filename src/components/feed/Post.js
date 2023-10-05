@@ -2,15 +2,19 @@ import React from "react";
 import userProfilePic from '../../images/user/defaultUserIcon.png';
 import postImg from '../../images/fourentrepreneurs.jpg'
 
-const Post = () => {
+const Post = (props) => {
+  const { post } = props;
+  const {
+    authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount,
+  } = post;
   return (
     <div className="Post">
       <div className="postHeader">
         <div className="postHeaderLeft">
           <img src={userProfilePic} alt="" />
           <div className="postHeaderLeftAuthor">
-            <h2>Nemwel Boniface</h2>
-            <p>July 26 2018, 01:03pm</p>
+            <h2>{authorName}</h2>
+            <p>{createdDate}</p>
           </div>
         </div>
 
@@ -20,19 +24,19 @@ const Post = () => {
       </div>
 
       <div className="postBody">
-        <p>To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.</p>
-        <img src={postImg} alt="" />
+        <p>{postBody}</p>
+        <img src={postImage} alt="" />
       </div>
 
       <div className="postInteractions">
         <div className="postInteractionsLeft">
           <p>
             <i class="fa fa-heart" aria-hidden="true"></i>
-            20
+            {postLikesCount}
           </p>
           <p>
             <i class="fa fa-comment" aria-hidden="true"></i>
-            2
+            {postCommentsCount}
           </p>
         </div>
 

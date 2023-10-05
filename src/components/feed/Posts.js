@@ -10,7 +10,7 @@ const Posts = () => {
       authorName: "Nemwel Boniface",
       createdDate: "July 26 2018, 01:03pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      posyImage: postImg1,
+      postImage: postImg1,
       postLikesCount: 20,
       postCommentsCount: 2
     },
@@ -19,7 +19,7 @@ const Posts = () => {
       authorName: "Chris Onsando",
       createdDate: "March 26 2018, 05:43pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      posyImage: postImg2,
+      postImage: postImg2,
       postLikesCount: 230,
       postCommentsCount: 25
     },
@@ -28,7 +28,7 @@ const Posts = () => {
       authorName: "John Doe",
       createdDate: "May 26 2018, 02:23pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      posyImage: postImg1,
+      postImage: postImg1,
       postLikesCount: 10,
       postCommentsCount: 4
     },

@@ -42,7 +42,7 @@
     max-width: 100%;
     object-fit: cover;
     border-radius: 50%;
-    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .postHeaderLeft .postHeaderLeftAuthor h2 {
@@ -81,7 +81,6 @@
     width: 100%;
     max-width: 100%;
     object-fit: cover;
-    margin-left: 15px;
   }
 
   .postInteractions {
