@@ -70,7 +70,7 @@ export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
 })
 
 const postSlice = createSlice({
-  name: "post",
+  name: "posts",
   initialState,
   reducers: {
     addPost: (state, action) => {
