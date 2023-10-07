@@ -37,6 +37,38 @@ const initialState = {
   error: null,
 }
 
+export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
+  try {
+    const response = await axios.post("url", {
+      postdetails
+    })
+    return response
+  } catch (error) {
+    throw new Error("Error when creating a post")
+  }
+})
+
+export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
+  try {
+    const response = await axios.get("myURL");
+    return response.data;
+  } catch (error) {
+    throw new Error("Failed to fetch posts")
+  }
+})
+
+export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
+  const deleteUrl = "URL/postID";
+  try {
+    const response = await axios.delete(deleteUrl, {
+      id
+    })
+    return response.data;
+  } catch (error) {
+    throw new Error("Cannot delete post")
+  }
+})
+
 const postSlice = createSlice({
   name: "post",
   initialState,
@@ -56,7 +88,7 @@ const postSlice = createSlice({
         posts: [...state.posts, postObject]
       }
     },
-    deletePost: (state, action) => {
+    removePost: (state, action) => {
       const { id } = action.payload;
       return {
         ...state,
@@ -114,5 +146,5 @@ const postSlice = createSlice({
   }
 })
 
-export const { addPost, deletePost, updatePost } = postSlice.actions
+export const { addPost, removePost, updatePost } = postSlice.actions
 export default postSlice.reducer
