@@ -76,6 +76,40 @@ const postSlice = createSlice({
         posts: updatedPosts,
       };
     },
+  },
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchPosts.pending, (state) => {
+      state.status = "Loading..";
+    })
+    .addCase(fetchPosts.rejected, (state, action) => {
+      state.status = "Failed";
+      state.error = action.error.message;
+    })
+    .addCase(fetchPosts.fulfilled, (state, action) => {
+      state.status = "Successful";
+      state.posts.push(action.payload);
+    })
+    .addCase(deletePost.fulfilled, (state, action) => {
+      state.status = "Succesfully deleted post";
+      state.posts = state.posts.filter((post) => post.id !== action.payload);
+    })
+    .addCase(deletePost.rejected, (state, action) => {
+      state.status = "Failed";
+      state.error = action.error.message;
+    })
+    .addCase(updatePost.fulfilled, (state, action) => {
+      state.status = "Succesfully updated post";
+      const updatedPost = action.payload;
+      const index = state.posts.findIndex((post) => post.id === updatedPost.id);
+      if (index !== -1) {
+        state.posts[index] = updatedPost;
+      }
+    })
+    .addCase(updatePost.rejected, (state, action) => {
+      state.status = "Failed";
+      state.error = action.error.message;
+    })
   }
 })
 
