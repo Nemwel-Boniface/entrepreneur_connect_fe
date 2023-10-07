@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 import postImg1 from '../../images/aboutus/businesspeople.jpeg'
 import postImg2 from '../../images/aboutus/businesspeoplepose.jpeg'
 
