@@ -37,6 +37,14 @@ const initialState = {
   error: null,
 }
 
+// Generating random custom details for the created posts
+const currentImages = [postImg1, postImg2];
+const currentNames = ["Jane Doe", "Michael Scoffield", "Arnold Martin"];
+let currentImageRef = Math.floor(Math.random() * 2);
+let currentNameRef = Math.floor(Math.random() * 3);
+// Update the posts id based on the currents posts length
+let postsLength = initialState.posts.length;
+
 export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   try {
     const response = await axios.post("url", {
@@ -76,12 +84,13 @@ const postSlice = createSlice({
     addPost: (state, action) => {
       const { id, authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount } = action.payload;
       const postObject = {
-        id,
-        authorName,
+        id: ++postsLength,
+        authorName: currentNames[currentNameRef],
         postBody,
-        postImage,
+        postImage: currentImages[currentImageRef],
         postLikesCount,
         postCommentsCount,
+        createdDate
       }
       return {
         ...state,
