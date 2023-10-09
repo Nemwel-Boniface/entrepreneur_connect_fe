@@ -21,7 +21,6 @@ const AddPost = () => {
     e.preventDefault();
     if(formData.postBody !== '') {
       const postObject = {
-        authorName: "John Doe",
         createdDate: formattedDate,
         postBody: formData.postBody,
         postLikesCount: Math.floor(Math.random() * 40) + 1,
@@ -30,15 +29,22 @@ const AddPost = () => {
       dispatch(addPost(postObject));
       setFormData({postBody: ''})
     }
+  }
 
-    const handleChange = (e) => {
-      const { name, value } = target;
-      setFormData({...formData, [name]: value});
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({...formData, [name]: value});
   }
   return (
     <section className="addPost">
-      <form className="addpostForm"></form>
+      <form className="addpostForm" onSubmit={handleSubmit}>
+        <textarea className="postBody" placeholder="Post Body here"
+          name="postBody" value={formData.postBody} onChange={handleChange}
+          required>
+        </textarea>
+
+        <button type="submit">Add Post</button>
+      </form>
     </section>
   )
 }
