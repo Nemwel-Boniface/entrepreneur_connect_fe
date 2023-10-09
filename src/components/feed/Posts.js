@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Post from "./Post";
-import postImg1 from '../../images/aboutus/businesspeople.jpeg'
-import postImg2 from '../../images/aboutus/businesspeoplepose.jpeg'
+import Post from "./Post"
 
 const Posts = () => {
   const postsDetails = useSelector((state) => state.posts.posts);

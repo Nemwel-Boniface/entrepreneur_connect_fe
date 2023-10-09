@@ -131,18 +131,6 @@ const postSlice = createSlice({
       state.status = "Failed";
       state.error = action.error.message;
     })
-    .addCase(updatePost.fulfilled, (state, action) => {
-      state.status = "Succesfully updated post";
-      const updatedPost = action.payload;
-      const index = state.posts.findIndex((post) => post.id === updatedPost.id);
-      if (index !== -1) {
-        state.posts[index] = updatedPost;
-      }
-    })
-    .addCase(updatePost.rejected, (state, action) => {
-      state.status = "Failed";
-      state.error = action.error.message;
-    })
   }
 })
 
