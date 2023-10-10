@@ -17,7 +17,7 @@ const Post = (props) => {
   const removeActive = () => {
     setActive(false);
   }
-  
+
   return (
     <div className="Post">
       <div className="postHeader">
@@ -30,7 +30,9 @@ const Post = (props) => {
         </div>
 
         <div className="postHeaderRight">
-          <button type="button"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+          <button type="button" onClick={toggleActiveClass}>
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
 
@@ -62,6 +64,19 @@ const Post = (props) => {
           </button>
         </div>
       </div>
+      {
+        isActive
+        ? (
+          <div className="postDelEdit">
+            <button type="button" onClick={removeActive}>
+              Edit Post
+            </button>
+            <button type="button" onClick={removeActive}>
+              Delete Post
+            </button>
+          </div>
+        ): ''
+      }
     </div>
   )
 }
