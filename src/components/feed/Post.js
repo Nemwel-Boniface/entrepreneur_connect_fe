@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { removePost } from "../../redux/post/postSlice";
 import userProfilePic from '../../images/user/defaultUserIcon.png';
 import postImg from '../../images/fourentrepreneurs.jpg'
+import { useDispatch } from "react-redux";
 
 const Post = (props) => {
   const { post } = props;
   const {
-    authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount,
+    id, authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount,
   } = post;
 
   const [ isActive, setActive ] = useState(false);
@@ -16,6 +18,14 @@ const Post = (props) => {
 
   const removeActive = () => {
     setActive(false);
+  }
+
+  // Changes to state
+  const dispatch = useDispatch()
+
+  const handleDelete = () => {
+    dispatch(removePost({ id }))
+    removeActive()
   }
 
   return (
@@ -71,7 +81,7 @@ const Post = (props) => {
             <button type="button" onClick={removeActive}>
               Edit Post
             </button>
-            <button type="button" onClick={removeActive}>
+            <button type="button" onClick={handleDelete}>
               Delete Post
             </button>
           </div>
