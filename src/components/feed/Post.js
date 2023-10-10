@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import userProfilePic from '../../images/user/defaultUserIcon.png';
 import postImg from '../../images/fourentrepreneurs.jpg'
 
@@ -7,6 +7,17 @@ const Post = (props) => {
   const {
     authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount,
   } = post;
+
+  const [ isActive, setActive ] = useState(false);
+
+  const toggleActiveClass = () => {
+    setActive(!isActive)
+  }
+
+  const removeActive = () => {
+    setActive(false);
+  }
+  
   return (
     <div className="Post">
       <div className="postHeader">
