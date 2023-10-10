@@ -11,6 +11,7 @@
 } */
 
 .Post {
+  position: relative;
   border-radius: 15px;
   padding: 5%;
   margin: 1.5rem 0;
@@ -128,6 +129,25 @@
 
   .postInteractions div button i {
     margin-right: .5rem;
+  }
+
+  /* The toggle */
+  .postDelEdit {
+    position: absolute;
+    top: 6rem;
+    right: 5%;
+    z-index: 1;
+    background-color: var(--herobg);
+    padding: 5%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postDelEdit button {
+    margin: 1rem 0;
+    outline: none;
+    border: none;
   }
 }
 
