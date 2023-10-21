@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   logInRequest, logInSuccess, logInFailure, logOut,
 } from '../../redux/user/logInSlice';
 import loginImg from '../../images/user/login-removebg-preview.png';
 
 const LogIn = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.logIn.loading);
   const success = useSelector((state) => state.logIn.success);
@@ -42,6 +43,8 @@ const LogIn = () => {
       localStorage.setItem('authToken', authToken);
 
       dispatch(logInSuccess(authToken));
+      navigate('/feed')
+
     } catch (error) {
       dispatch(logInFailure(error.message));
     }
@@ -52,17 +55,6 @@ const LogIn = () => {
   };
 
   const renderLoginForm = () => {
-    if (isLoggedIn) {
-      // If the user is logged in, render a different component or redirect to a different page
-      return (
-        <div>
-          <h2>You are logged in!</h2>
-          <button type="submit" onClick={handleLogOut}>
-            LogOut
-          </button>
-        </div>
-      );
-    }
     return (
       <form className="loginForm" onSubmit={handleSubmit}>
         <input

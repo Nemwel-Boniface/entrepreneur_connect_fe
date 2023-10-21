@@ -3,6 +3,13 @@ import axios from "axios";
 import postImg1 from '../../images/aboutus/businesspeople.jpeg'
 import postImg2 from '../../images/aboutus/businesspeoplepose.jpeg'
 
+const createPostURL = "http://127.0.0.1:8000/api/posts/post/"
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': localStorage.getItem('authToken'), // Assuming you have the token stored in localStorage
+};
+
 const initialState = {
   posts: [
     {
@@ -47,14 +54,34 @@ let postsLength = initialState.posts.length;
 
 export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   try {
-    const response = await axios.post("url", {
-      postdetails
-    })
-    return response
-  } catch (error) {
-    throw new Error("Error when creating a post")
+    const formData = new FormData();
+    formData.append('image', post.image); // Assuming postImage is the file input field
+
+    formData.append('body', post.postBody);
+    formData.append('taglist', 'django, ruby');
+    formData.append('created_at', post.createdDate);
+    formData.append('updated_at', '2023-10-10T09:13:00.955361Z');
+    formData.append('post_id', Math.floor(Math.random() * 300));
+
+    console.log(formData)
+    const response = await fetch(createPostURL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to add Post');
+    }
+
+    const addedPost = await response.json();
+    return addedPost;
+  } catch (err) {
+    return `Failed to fetch post: ${err.message}`;
   }
-})
+});
 
 export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
   try {
