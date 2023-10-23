@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 const Post = (props) => {
   const { post } = props;
   const {
-    id, authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount,
+    id, authorName, createdDate, taglist, postBody, image, postLikesCount, postCommentsCount,
   } = post;
 
   const [ isActive, setActive ] = useState(false);
@@ -48,7 +48,15 @@ const Post = (props) => {
 
       <div className="postBody">
         <p>{postBody}</p>
-        <img src={postImage} alt="" />
+        <img src={image} alt="" />
+      </div>
+
+      <div className="taglist">
+        <ul className="techstacks">
+          {taglist.split(',').map((tag) => (
+            <li key={tag}>#{tag}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="postInteractions">

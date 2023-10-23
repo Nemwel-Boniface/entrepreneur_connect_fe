@@ -84,6 +84,20 @@
     object-fit: cover;
   }
 
+  .taglist {
+    margin: 1rem 0;
+  }
+
+  .taglist ul {
+    display: flex;
+  }
+
+  .taglist ul li {
+    list-style-type: none;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
   .postInteractions {
     display: flex;
     justify-content: space-between;
