@@ -58,12 +58,11 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
     formData.append('image', post.image); // Assuming postImage is the file input field
 
     formData.append('body', post.postBody);
-    formData.append('taglist', 'django, ruby');
+    formData.append('taglist', post.taglist);
     formData.append('created_at', post.createdDate);
     formData.append('updated_at', '2023-10-10T09:13:00.955361Z');
     formData.append('post_id', Math.floor(Math.random() * 300));
 
-    console.log(formData)
     const response = await fetch(createPostURL, {
       method: 'POST',
       headers: {

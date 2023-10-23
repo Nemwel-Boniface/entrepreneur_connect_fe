@@ -17,24 +17,24 @@ const AddPost = () => {
     postImage: '',
     postLikesCount: '',
     postCommentsCount: '',
+    postTags: '',
   })
 
   const handleSubmit = async () => {
     if(formData.postBody !== '') {
       const postObject = {
         image: url,
+        taglist: formData.postTags,
         createdDate: formattedDate,
         postBody: formData.postBody,
         postLikesCount: Math.floor(Math.random() * 40) + 1,
         postCommentsCount: Math.floor(Math.random() * 100) + 1
       }
-      console.log("image" + url)
-
       dispatch(addPost(postObject));
       await dispatch(createPost(postObject))
-      setFormData({postBody: ''})
+      setFormData({postBody: '', postTags: ''})
+      setImage({image: ''})
     }
-    console.log("One"+ postObject.image)
   }
 
   const handleChange = (e) => {
@@ -70,8 +70,14 @@ const AddPost = () => {
          accept="image/*"
         onChange={(e) => setImage(e.target.files[0])}
       />
+      <input type="text" name="post tags"
+      placeholder="Enter tags (comma separated)"
+      value={formData.postTags}
+      onChange={(e) => setFormData({ ...formData, postTags: e.target.value })}
+      />
         <textarea className="postBody" placeholder="Post Body here"
-          name="postBody" value={formData.postBody} onChange={handleChange}
+          name="postBody" value={formData.postBody} 
+          onChange={(e) => setFormData({ ...formData, postBody: e.target.value })}
           required>
         </textarea>
 
