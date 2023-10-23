@@ -17,27 +17,30 @@ const initialState = {
       authorName: "Nemwel Boniface",
       createdDate: "July 26 2018, 01:03pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      postImage: postImg1,
+      image: postImg1,
       postLikesCount: 20,
       postCommentsCount: 2,
+      taglist: "Maths, English",
     },
     {
       id: 2,
       authorName: "Chris Onsando",
       createdDate: "March 26 2018, 05:43pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      postImage: postImg2,
+      image: postImg2,
       postLikesCount: 230,
-      postCommentsCount: 25
+      postCommentsCount: 25,
+      taglist: "Science, Social",
     },
     {
       id: 3,
       authorName: "John Doe",
       createdDate: "May 26 2018, 02:23pm",
       postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      postImage: postImg1,
+      image: postImg1,
       postLikesCount: 10,
-      postCommentsCount: 4
+      postCommentsCount: 4,
+      taglist: "Geography, Physics",
     },
   ],
   status: "idle", // Possible values: "idle", "loading", "succeeded", "failed"
@@ -54,21 +57,21 @@ let postsLength = initialState.posts.length;
 
 export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   try {
-    const formData = new FormData();
-    formData.append('image', post.image); // Assuming postImage is the file input field
-
-    formData.append('body', post.postBody);
-    formData.append('taglist', post.taglist);
-    formData.append('created_at', post.createdDate);
-    formData.append('updated_at', '2023-10-10T09:13:00.955361Z');
-    formData.append('post_id', Math.floor(Math.random() * 300));
-
+    let formData = {
+      image: post.image,
+      body: post.postBody,
+      taglist: post.taglist,
+      // created_at: post.createdDate,
+      // updated_at: post.createdDate,
+      // post_id: Math.floor(Math.random() * 300),
+    }
     const response = await fetch(createPostURL, {
       method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
       },
-      body: formData,
+      body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
@@ -108,15 +111,16 @@ const postSlice = createSlice({
   initialState,
   reducers: {
     addPost: (state, action) => {
-      const { id, authorName, createdDate, postBody, postImage, postLikesCount, postCommentsCount } = action.payload;
+      const { id, authorName, createdDate, postBody, image, postLikesCount, postCommentsCount, taglist } = action.payload;
       const postObject = {
         id: ++postsLength,
         authorName: currentNames[currentNameRef],
         postBody,
-        postImage: currentImages[currentImageRef],
+        image,
         postLikesCount,
         postCommentsCount,
-        createdDate
+        createdDate,
+        taglist,
       }
       return {
         ...state,

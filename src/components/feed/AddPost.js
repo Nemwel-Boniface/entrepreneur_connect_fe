@@ -7,20 +7,18 @@ const AddPost = () => {
   const currentDate = new Date();
   const formattedDate = formatDate(currentDate);
   const [image, setImage] = useState("")
-  const [url, setUrl] = useState("")
-  
+  const [url, setUrl] = useState("")  
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     authorName: '',
     createdDate: '',
     postBody: '',
-    postImage: '',
     postLikesCount: '',
     postCommentsCount: '',
     postTags: '',
   })
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (url) => {
     if(formData.postBody !== '') {
       const postObject = {
         image: url,
@@ -56,15 +54,14 @@ const AddPost = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setUrl(data.url);
-        console.log(data.url); // Log the URL here
-        handleSubmit();
+        handleSubmit(data.url);
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <section className="addPost">
-      <form className="addpostForm" onSubmit={uploadImage} enctype="multipart/form-data">
+      <form className="addpostForm" onSubmit={uploadImage} >
       <input
          type="file"
          accept="image/*"
