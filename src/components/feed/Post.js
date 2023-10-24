@@ -7,8 +7,14 @@ import { useDispatch } from "react-redux";
 const Post = (props) => {
   const { post } = props;
   const {
-    id, authorName, createdDate, taglist, postBody, image, postLikesCount, postCommentsCount,
+    id,
+    created_at,
+    tags,
+    body,
+    image,
+    likes_count, // Make sure the property names match the API response
   } = post;
+  
 
   const [ isActive, setActive ] = useState(false);
 
@@ -34,8 +40,8 @@ const Post = (props) => {
         <div className="postHeaderLeft">
           <img src={userProfilePic} alt="" />
           <div className="postHeaderLeftAuthor">
-            <h2>{authorName}</h2>
-            <p>{createdDate}</p>
+            <h2>Nemwel Boniface</h2>
+            <p>{created_at}</p>
           </div>
         </div>
 
@@ -47,13 +53,13 @@ const Post = (props) => {
       </div>
 
       <div className="postBody">
-        <p>{postBody}</p>
+        <p>{body}</p>
         <img src={image} alt="" />
       </div>
 
       <div className="taglist">
         <ul className="techstacks">
-          {taglist.split(',').map((tag) => (
+          {tags.map((tag) => (
             <li key={tag}>#{tag}</li>
           ))}
         </ul>
@@ -63,11 +69,11 @@ const Post = (props) => {
         <div className="postInteractionsLeft">
           <p>
             <i class="fa fa-heart" aria-hidden="true"></i>
-            {postLikesCount}
+            {likes_count}
           </p>
           <p>
             <i class="fa fa-comment" aria-hidden="true"></i>
-            {postCommentsCount}
+            12
           </p>
         </div>
 
