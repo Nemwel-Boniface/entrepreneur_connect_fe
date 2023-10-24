@@ -22,13 +22,13 @@ const AddPost = () => {
     if(formData.postBody !== '') {
       const postObject = {
         image: url,
-        taglist: formData.postTags,
+        tags: formData.postTags,
         createdDate: formattedDate,
         postBody: formData.postBody,
         postLikesCount: Math.floor(Math.random() * 40) + 1,
         postCommentsCount: Math.floor(Math.random() * 100) + 1
       }
-      dispatch(addPost(postObject));
+      // dispatch(addPost(postObject));
       await dispatch(createPost(postObject))
       setFormData({postBody: '', postTags: ''})
       setImage({image: ''})

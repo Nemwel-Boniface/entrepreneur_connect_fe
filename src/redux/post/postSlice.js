@@ -11,40 +11,9 @@ const headers = {
 };
 
 const initialState = {
-  posts: [
-    {
-      id: 1,
-      authorName: "Nemwel Boniface",
-      createdDate: "July 26 2018, 01:03pm",
-      postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      image: postImg1,
-      postLikesCount: 20,
-      postCommentsCount: 2,
-      taglist: "Maths, English",
-    },
-    {
-      id: 2,
-      authorName: "Chris Onsando",
-      createdDate: "March 26 2018, 05:43pm",
-      postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      image: postImg2,
-      postLikesCount: 230,
-      postCommentsCount: 25,
-      taglist: "Science, Social",
-    },
-    {
-      id: 3,
-      authorName: "John Doe",
-      createdDate: "May 26 2018, 02:23pm",
-      postBody: "To find the perfect business partner, look for someone with complementary skills and experience, similar values and goals, and open communication.",
-      image: postImg1,
-      postLikesCount: 10,
-      postCommentsCount: 4,
-      taglist: "Geography, Physics",
-    },
-  ],
-  status: "idle", // Possible values: "idle", "loading", "succeeded", "failed"
-  error: null,
+  posts: [],
+  isLoading: false,
+  isError: false,
 }
 
 // Generating random custom details for the created posts
@@ -55,15 +24,25 @@ let currentNameRef = Math.floor(Math.random() * 3);
 // Update the posts id based on the currents posts length
 let postsLength = initialState.posts.length;
 
+export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/api/posts/posts/');
+    if (!response.ok) {
+      throw new Error('Failed to fetch posts');
+    }
+    const posts = await response.json();
+    return posts;
+  } catch (error) {
+    throw new Error(`Failed to fetch posts: ${error.message}`);
+  }
+});
+
 export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   try {
     let formData = {
       image: post.image,
       body: post.postBody,
-      taglist: post.taglist,
-      // created_at: post.createdDate,
-      // updated_at: post.createdDate,
-      // post_id: Math.floor(Math.random() * 300),
+      taglist: post.tags,
     }
     const response = await fetch(createPostURL, {
       method: 'POST',
@@ -77,7 +56,8 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
     if (!response.ok) {
       throw new Error('Failed to add Post');
     }
-
+ 
+    fetchPosts()
     const addedPost = await response.json();
     return addedPost;
   } catch (err) {
@@ -85,14 +65,6 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   }
 });
 
-export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
-  try {
-    const response = await axios.get("myURL");
-    return response.data;
-  } catch (error) {
-    throw new Error("Failed to fetch posts")
-  }
-})
 
 export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
   const deleteUrl = "URL/postID";
@@ -120,7 +92,7 @@ const postSlice = createSlice({
         postLikesCount,
         postCommentsCount,
         createdDate,
-        taglist,
+        taglist: tags,
       }
       return {
         ...state,
@@ -160,7 +132,7 @@ const postSlice = createSlice({
     })
     .addCase(fetchPosts.fulfilled, (state, action) => {
       state.status = "Successful";
-      state.posts.push(action.payload);
+      state.posts = action.payload;
     })
     .addCase(deletePost.fulfilled, (state, action) => {
       state.status = "Succesfully deleted post";
