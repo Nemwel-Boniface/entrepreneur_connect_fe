@@ -62,11 +62,6 @@ const AddPost = () => {
   return (
     <section className="addPost">
       <form className="addpostForm" onSubmit={uploadImage} >
-      <input
-         type="file"
-         accept="image/*"
-        onChange={(e) => setImage(e.target.files[0])}
-      />
       <input type="text" name="post tags"
       placeholder="Enter tags (comma separated)"
       value={formData.postTags}
@@ -77,8 +72,14 @@ const AddPost = () => {
           onChange={(e) => setFormData({ ...formData, postBody: e.target.value })}
           required>
         </textarea>
-
+        <div>
+        <input
+         type="file"
+         accept="image/*"
+        onChange={(e) => setImage(e.target.files[0])}
+      />
         <button type="submit">Add Post</button>
+        </div>
       </form>
     </section>
   )

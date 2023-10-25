@@ -163,6 +163,77 @@
     outline: none;
     border: none;
   }
+
+  /* Add Post component */
+
+  .addPost {
+    padding: 5% 0;
+  }
+
+  .addPost form {
+    padding: 5%;
+    background: #fff;
+  }
+
+  .addpostForm input {
+    margin: 0.5rem 0;
+    width: 100%;
+    padding: 8px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--titleblue);
+  }
+
+  .addpostForm textarea {
+    width: 100%;
+    height: 6rem;
+    padding: 8px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--titleblue);
+  }
+
+  .addPost form div {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addPost form div input {
+    flex: 2;
+    border-bottom: none;
+  }
+
+  .addPost form div button {
+    flex: 1;
+  }
+
+  .addPost form div button {
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 0.5rem 0;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: var(--lightgreen);
+  }
+  
+  .addPost form div button:hover {
+    border: 1px solid var(--lightgreen);
+    background: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--lightgreen);
+  }
+  
+  .loginForm button:active {
+    color: #fff;
+    background: var(--lightgreen);
+  }
 }
 
 /* Desktop versions now */
