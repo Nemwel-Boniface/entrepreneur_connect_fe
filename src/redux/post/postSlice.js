@@ -14,6 +14,7 @@ const initialState = {
   posts: [],
   isLoading: false,
   isError: false,
+  status: "null",
 }
 
 // Generating random custom details for the created posts
@@ -83,7 +84,7 @@ const postSlice = createSlice({
   initialState,
   reducers: {
     addPost: (state, action) => {
-      const { id, authorName, createdDate, postBody, image, postLikesCount, postCommentsCount, taglist } = action.payload;
+      const { id, tags, authorName, createdDate, postBody, image, postLikesCount, postCommentsCount, taglist } = action.payload;
       const postObject = {
         id: ++postsLength,
         authorName: currentNames[currentNameRef],
@@ -124,14 +125,18 @@ const postSlice = createSlice({
   extraReducers: (builder) => {
     builder
     .addCase(fetchPosts.pending, (state) => {
-      state.status = "Loading..";
+      state.isLoading = true;
+      state.isError = false;
     })
     .addCase(fetchPosts.rejected, (state, action) => {
-      state.status = "Failed";
-      state.error = action.error.message;
+      state.isLoading = false;
+      state.isError = true;
+      state.isError = action.error.message;
     })
     .addCase(fetchPosts.fulfilled, (state, action) => {
       state.status = "Successful";
+      state.isLoading = false;
+      state.isError = false;
       state.posts = action.payload;
     })
     .addCase(deletePost.fulfilled, (state, action) => {
