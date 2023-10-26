@@ -1,4 +1,6 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removePost } from '../../redux/post/postSlice';
 
@@ -104,6 +106,21 @@ const Post = (props) => {
       }
     </div>
   );
+};
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    created_at: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    likes_count: PropTypes.number.isRequired,
+    author: PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+    }).isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };
 
 export default Post;
