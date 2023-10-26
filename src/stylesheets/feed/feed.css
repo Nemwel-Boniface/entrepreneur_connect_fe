@@ -12,8 +12,6 @@
   position: relative;
 }
 
-
-
 /* Responsive design now */
 
 /* Tablet version */
@@ -24,7 +22,8 @@
     grid-template-columns: 1fr 2fr 1fr;
   }
 
-  .feedLeft, .FeedRight {
+  .feedLeft,
+  .FeedRight {
     background-color: var(--herobg);
     height: 100%;
   }
@@ -35,7 +34,6 @@
 }
 
 /* Desktop versions now */
-
 @media screen and (min-width: 1080px) {
-  
+  /* Desktop versions now */
 }

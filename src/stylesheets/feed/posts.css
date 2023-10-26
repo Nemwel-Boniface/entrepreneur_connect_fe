@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 :root {
   --titleblue: rgba(2, 59, 86, 1);
   --lightgreen: rgba(44, 188, 100, 1);
@@ -24,7 +25,6 @@
 /* Tablet version */
 
 @media screen and (min-width: 748px) {
-
   .postHeader {
     display: flex;
     justify-content: space-between;
@@ -63,7 +63,7 @@
   .postHeader .postHeaderRight button i {
     font-size: 25px;
     font-weight: bold;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .postHeader .postHeaderRight button i:hover {
@@ -109,14 +109,13 @@
     align-items: center;
   }
 
-
   .postInteractions div p {
     margin-right: 1rem;
   }
 
   .postInteractions div p i {
     font-size: 22px;
-    margin-right: .3rem;
+    margin-right: 0.3rem;
     color: var(--lightgreen);
   }
 
@@ -126,7 +125,7 @@
     border: none;
     cursor: pointer;
     padding: 5px;
-    transition: .5s;
+    transition: 0.5s;
     background-color: var(--herobg);
   }
 
@@ -142,7 +141,7 @@
   }
 
   .postInteractions div button i {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 
   /* The toggle */
@@ -179,18 +178,18 @@
     margin: 0.5rem 0;
     width: 100%;
     padding: 8px;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--titleblue);
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--titleblue);
   }
 
   .addpostForm textarea {
     width: 100%;
     height: 6rem;
     padding: 8px;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--titleblue);
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--titleblue);
   }
 
   .addPost form div {
@@ -207,10 +206,6 @@
 
   .addPost form div button {
     flex: 1;
-  }
-
-  .addPost form div button {
-    flex: 1;
     width: 100%;
     border: none;
     outline: none;
@@ -221,7 +216,7 @@
     font-size: 18px;
     background: var(--lightgreen);
   }
-  
+
   .addPost form div button:hover {
     border: 1px solid var(--lightgreen);
     background: #fff;
@@ -229,7 +224,7 @@
     transition: 0.5s;
     color: var(--lightgreen);
   }
-  
+
   .loginForm button:active {
     color: #fff;
     background: var(--lightgreen);
@@ -239,5 +234,5 @@
 /* Desktop versions now */
 
 @media screen and (min-width: 1080px) {
-  
+  /* Desktop versions now */
 }
