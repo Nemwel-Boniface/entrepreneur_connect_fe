@@ -8,6 +8,7 @@ const Post = (props) => {
   const { post } = props;
   const {
     id,
+    author,
     created_at,
     tags,
     body,
@@ -38,9 +39,9 @@ const Post = (props) => {
     <div className="Post">
       <div className="postHeader">
         <div className="postHeaderLeft">
-          <img src={userProfilePic} alt="" />
+          <img src={author.image} alt="" />
           <div className="postHeaderLeftAuthor">
-            <h2>Nemwel Boniface</h2>
+            <h2>{author.username}</h2>
             <p>{created_at}</p>
           </div>
         </div>
