@@ -23,7 +23,7 @@ const Posts = () => {
   }
 
   if (posts.length === 0) {
-    return <div>There are no Posts created</div>
+    return <div>There are no Posts created</div>;
   }
   return (
     <article className="Posts">
