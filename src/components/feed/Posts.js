@@ -21,6 +21,10 @@ const Posts = () => {
   if (isError) {
     return <div>Something went wrong</div>;
   }
+
+  if (posts.length === 0) {
+    return <div>There are no Posts created</div>
+  }
   return (
     <article className="Posts">
       {posts.map((post) => (
