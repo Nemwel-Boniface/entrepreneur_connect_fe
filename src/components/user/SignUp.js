@@ -7,13 +7,12 @@ import {
 import signUpImg from '../../images/user/signup-removebg-preview.png';
 
 const SignUp = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.signUp.loading);
   const success = useSelector((state) => state.signUp.success);
   const error = useSelector((state) => state.signUp.error);
   const [image, setImage] = useState('');
-  const [url, setUrl] = useState('')
 
   const [formData, setFormData] = useState({
     email: '',
@@ -23,7 +22,7 @@ const SignUp = () => {
 
   const handleSubmit = async (imageURL) => {
     dispatch(signUpRequest());
-    const upDatedFormData = {...formData, image: imageURL}
+    const upDatedFormData = { ...formData, image: imageURL };
     try {
       const response = await fetch('http://127.0.0.1:8000/api/user/register/', {
         method: 'POST',
@@ -48,7 +47,7 @@ const SignUp = () => {
       // Dispatch the signup success action and set the token in Redux state
       dispatch(signUpSuccess());
       dispatch(setToken(authToken)); // Assuming you have a setToken action
-      navigate('/feed')
+      navigate('/feed');
     } catch (error) {
       // Handle errors during the fetch request or error responses from the API
       dispatch(signUpFailure(error.message)); // Dispatch a failure action with the error message
@@ -56,23 +55,22 @@ const SignUp = () => {
   };
 
   const uploadImage = (e) => {
-    e.preventDefault()
-    const data = new FormData()
-    data.append("file", image)
-    data.append("upload_preset", "entrepreneur_connect")
-    data.append("cloud_name", "nemwelb")
+    e.preventDefault();
+    const data = new FormData();
+    data.append('file', image);
+    data.append('upload_preset', 'entrepreneur_connect');
+    data.append('cloud_name', 'nemwelb');
 
-    fetch("https://api.cloudinary.com/v1_1/nemwelb/image/upload", {
-      method: "POST",
+    fetch('https://api.cloudinary.com/v1_1/nemwelb/image/upload', {
+      method: 'POST',
       body: data,
     })
       .then((res) => res.json())
       .then((data) => {
-        setUrl(data.url)
-        handleSubmit(data.url)
-      })
-      .catch((err) => console.log(err))
-  }
+        handleSubmit(data.url);
+      })/* eslint-disable no-console */
+      .catch((err) => console.log(err));
+  };
 
   const signUpForm = () => (
     <section className="signUpComponent">
@@ -98,8 +96,8 @@ const SignUp = () => {
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
         <input
-          type='file'
-          accept='image/*'
+          type="file"
+          accept="image/*"
           onChange={(e) => setImage(e.target.files[0])}
         />
 

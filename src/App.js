@@ -6,10 +6,10 @@ import './stylesheets/homePage/footer.css';
 import './stylesheets/homePage/navbar.css';
 import './stylesheets/user/login.css';
 import './stylesheets/user/currentUserProfile.css';
-import './stylesheets/feed/feed.css'
-import './stylesheets/feed/feedNavBar.css'
-import './stylesheets/feed/post.css'
-import './stylesheets/feed/posts.css'
+import './stylesheets/feed/feed.css';
+import './stylesheets/feed/feedNavBar.css';
+import './stylesheets/feed/post.css';
+import './stylesheets/feed/posts.css';
 import './App.css';
 import './stylesheets/notfound.css';
 import { Routes, Route } from 'react-router-dom';
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="/userProfile" element={<CurrentUserProfile />} />
-        <Route path='/feed' element={<Feed />} />
+        <Route path="/feed" element={<Feed />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

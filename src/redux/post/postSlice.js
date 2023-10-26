@@ -1,29 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import postImg1 from '../../images/aboutus/businesspeople.jpeg'
-import postImg2 from '../../images/aboutus/businesspeoplepose.jpeg'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const createPostURL = "http://127.0.0.1:8000/api/posts/post/"
-
-const headers = {
-  'Content-Type': 'application/json',
-  'Authorization': localStorage.getItem('authToken'), // Assuming you have the token stored in localStorage
-};
+const createPostURL = 'http://127.0.0.1:8000/api/posts/post/';
 
 const initialState = {
   posts: [],
   isLoading: false,
   isError: false,
-  status: "null",
-}
-
-// Generating random custom details for the created posts
-const currentImages = [postImg1, postImg2];
-const currentNames = ["Jane Doe", "Michael Scoffield", "Arnold Martin"];
-let currentImageRef = Math.floor(Math.random() * 2);
-let currentNameRef = Math.floor(Math.random() * 3);
-// Update the posts id based on the currents posts length
-let postsLength = initialState.posts.length;
+  status: 'null',
+};
 
 export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
   try {
@@ -40,16 +25,16 @@ export const fetchPosts = createAsyncThunk('posts/getPosts', async () => {
 
 export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   try {
-    let formData = {
+    const formData = {
       image: post.image,
       body: post.postBody,
       taglist: post.tags,
-    }
+    };
     const response = await fetch(createPostURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
       },
       body: JSON.stringify(formData),
     });
@@ -57,8 +42,8 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
     if (!response.ok) {
       throw new Error('Failed to add Post');
     }
- 
-    fetchPosts()
+
+    fetchPosts();
     const addedPost = await response.json();
     return addedPost;
   } catch (err) {
@@ -66,46 +51,47 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
   }
 });
 
-
 export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
-  const deleteUrl = "URL/postID";
+  const deleteUrl = 'URL/postID';
   try {
     const response = await axios.delete(deleteUrl, {
-      id
-    })
+      id,
+    });
     return response.data;
   } catch (error) {
-    throw new Error("Cannot delete post")
+    throw new Error('Cannot delete post');
   }
-})
+});
 
 const postSlice = createSlice({
-  name: "posts",
+  name: 'posts',
   initialState,
   reducers: {
     addPost: (state, action) => {
-      const { id, tags, authorName, createdDate, postBody, image, postLikesCount, postCommentsCount, taglist } = action.payload;
+      const {
+        id, tags, authorName, createdDate, postBody, image, postLikesCount, postCommentsCount,
+      } = action.payload;
       const postObject = {
-        id: ++postsLength,
-        authorName: currentNames[currentNameRef],
+        id,
+        authorName,
         postBody,
         image,
         postLikesCount,
         postCommentsCount,
         createdDate,
         taglist: tags,
-      }
+      };
       return {
         ...state,
-        posts: [...state.posts, postObject]
-      }
+        posts: [...state.posts, postObject],
+      };
     },
     removePost: (state, action) => {
       const { id } = action.payload;
       return {
         ...state,
-        posts: state.posts.filter((post) => post.id !== id)
-      }
+        posts: state.posts.filter((post) => post.id !== id),
+      };
     },
     updatePost: (state, action) => {
       const updatedPost = action.payload;
@@ -124,31 +110,31 @@ const postSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    .addCase(fetchPosts.pending, (state) => {
-      state.isLoading = true;
-      state.isError = false;
-    })
-    .addCase(fetchPosts.rejected, (state, action) => {
-      state.isLoading = false;
-      state.isError = true;
-      state.isError = action.error.message;
-    })
-    .addCase(fetchPosts.fulfilled, (state, action) => {
-      state.status = "Successful";
-      state.isLoading = false;
-      state.isError = false;
-      state.posts = action.payload;
-    })
-    .addCase(deletePost.fulfilled, (state, action) => {
-      state.status = "Succesfully deleted post";
-      state.posts = state.posts.filter((post) => post.id !== action.payload);
-    })
-    .addCase(deletePost.rejected, (state, action) => {
-      state.status = "Failed";
-      state.error = action.error.message;
-    })
-  }
-})
+      .addCase(fetchPosts.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(fetchPosts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isError = action.error.message;
+      })
+      .addCase(fetchPosts.fulfilled, (state, action) => {
+        state.status = 'Successful';
+        state.isLoading = false;
+        state.isError = false;
+        state.posts = action.payload;
+      })
+      .addCase(deletePost.fulfilled, (state, action) => {
+        state.status = 'Succesfully deleted post';
+        state.posts = state.posts.filter((post) => post.id !== action.payload);
+      })
+      .addCase(deletePost.rejected, (state, action) => {
+        state.status = 'Failed';
+        state.error = action.error.message;
+      });
+  },
+});
 
-export const { addPost, removePost, updatePost } = postSlice.actions
-export default postSlice.reducer
+export const { addPost, removePost, updatePost } = postSlice.actions;
+export default postSlice.reducer;

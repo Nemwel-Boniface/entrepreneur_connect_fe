@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { removePost } from "../../redux/post/postSlice";
-import userProfilePic from '../../images/user/defaultUserIcon.png';
-import postImg from '../../images/fourentrepreneurs.jpg'
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removePost } from '../../redux/post/postSlice';
 
 const Post = (props) => {
   const { post } = props;
@@ -15,25 +13,24 @@ const Post = (props) => {
     image,
     likes_count, // Make sure the property names match the API response
   } = post;
-  
 
-  const [ isActive, setActive ] = useState(false);
+  const [isActive, setActive] = useState(false);
 
   const toggleActiveClass = () => {
-    setActive(!isActive)
-  }
+    setActive(!isActive);
+  };
 
   const removeActive = () => {
     setActive(false);
-  }
+  };
 
   // Changes to state
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(removePost({ id }))
-    removeActive()
-  }
+    dispatch(removePost({ id }));
+    removeActive();
+  };
 
   return (
     <div className="Post">
@@ -48,7 +45,7 @@ const Post = (props) => {
 
         <div className="postHeaderRight">
           <button type="button" onClick={toggleActiveClass}>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -61,7 +58,10 @@ const Post = (props) => {
       <div className="taglist">
         <ul className="techstacks">
           {tags.map((tag) => (
-            <li key={tag}>#{tag}</li>
+            <li key={tag}>
+              #
+              {tag}
+            </li>
           ))}
         </ul>
       </div>
@@ -69,41 +69,41 @@ const Post = (props) => {
       <div className="postInteractions">
         <div className="postInteractionsLeft">
           <p>
-            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i className="fa fa-heart" aria-hidden="true" />
             {likes_count}
           </p>
           <p>
-            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i className="fa fa-comment" aria-hidden="true" />
             12
           </p>
         </div>
 
         <div className="postInteractionsRight">
           <button type="button">
-            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i className="fa fa-heart" aria-hidden="true" />
             Like
           </button>
           <button type="button">
-            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i className="fa fa-comment" aria-hidden="true" />
             Comment
           </button>
         </div>
       </div>
       {
         isActive
-        ? (
-          <div className="postDelEdit">
-            <button type="button" onClick={removeActive}>
-              Edit Post
-            </button>
-            <button type="button" onClick={handleDelete}>
-              Delete Post
-            </button>
-          </div>
-        ): ''
+          ? (
+            <div className="postDelEdit">
+              <button type="button" onClick={removeActive}>
+                Edit Post
+              </button>
+              <button type="button" onClick={handleDelete}>
+                Delete Post
+              </button>
+            </div>
+          ) : ''
       }
     </div>
-  )
-}
+  );
+};
 
 export default Post;
