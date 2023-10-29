@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
-  logInRequest, logInSuccess, logInFailure, logOut,
+  logInRequest, logInSuccess, logInFailure,
 } from '../../redux/user/logInSlice';
 import loginImg from '../../images/user/login-removebg-preview.png';
 
 const LogIn = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.logIn.loading);
   const success = useSelector((state) => state.logIn.success);
   const failure = useSelector((state) => state.logIn.failure);
-  const isLoggedIn = useSelector((state) => state.logIn.isLoggedIn);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -42,60 +42,48 @@ const LogIn = () => {
       localStorage.setItem('authToken', authToken);
 
       dispatch(logInSuccess(authToken));
+      navigate('/feed');
     } catch (error) {
       dispatch(logInFailure(error.message));
     }
   };
 
-  const handleLogOut = () => {
-    dispatch(logOut());
-  };
+  // const handleLogOut = () => {
+  //   dispatch(logOut());
+  // };
 
-  const renderLoginForm = () => {
-    if (isLoggedIn) {
-      // If the user is logged in, render a different component or redirect to a different page
-      return (
-        <div>
-          <h2>You are logged in!</h2>
-          <button type="submit" onClick={handleLogOut}>
-            LogOut
-          </button>
-        </div>
-      );
-    }
-    return (
-      <form className="loginForm" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
+  const renderLoginForm = () => (
+    <form className="loginForm" onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-        />
+      <input
+        type="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+      />
 
-        <p><Link to="/">Forgot password?</Link></p>
+      <p><Link to="/">Forgot password?</Link></p>
 
-        <button type="submit" disabled={loading}>
-          Login
-        </button>
+      <button type="submit" disabled={loading}>
+        Login
+      </button>
 
-        {loading && <p className="yellow">Logging in...</p>}
-        {failure && (
-          <p className="red">
-            Error:
-            {failure}
-          </p>
-        )}
-        {success && <p className="green">Login successful!</p>}
-      </form>
-    );
-  };
+      {loading && <p className="yellow">Logging in...</p>}
+      {failure && (
+      <p className="red">
+        Error:
+        {failure}
+      </p>
+      )}
+      {success && <p className="green">Login successful!</p>}
+    </form>
+  );
 
   return (
     <section className="loginComponent">

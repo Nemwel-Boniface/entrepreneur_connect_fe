@@ -1,0 +1,39 @@
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+.Feed {
+  padding: 2%;
+  position: relative;
+}
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .feedBody {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .feedLeft,
+  .FeedRight {
+    background-color: var(--herobg);
+    height: 100%;
+  }
+
+  .FeedMiddle {
+    padding: 5%;
+  }
+}
+
+/* Desktop versions now */
+@media screen and (min-width: 1080px) {
+  /* Desktop versions now */
+}
