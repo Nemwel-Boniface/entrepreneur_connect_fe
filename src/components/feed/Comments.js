@@ -1,9 +1,10 @@
 import React from "react";
+import Comment from "./Comment";
 
 const Comments = () => {
   return (
     <section className="comments">
-      <h1>Will be changed to a sepaate component</h1>
+      <Comment />
     </section>
   )
 }
