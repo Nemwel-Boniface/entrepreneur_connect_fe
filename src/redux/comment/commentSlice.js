@@ -12,10 +12,9 @@ const initialState = {
 export const createComment = createAsyncThunk('comments/postComments', async (comment) => {
   try {
     const formData = {
-      comment: comment.text,
-      post: comment.id,
+      comment: comment.comment,
+      post: comment.post,
     }
-
     const response = await fetch(createCommentsURL, {
       method: "POST",
       headers: {
