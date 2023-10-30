@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deletePost, fetchPosts, removePost } from '../../redux/post/postSlice';
+import Comments from './Comments';
 
 const Post = (props) => {
   const { post } = props;
@@ -106,6 +107,7 @@ const Post = (props) => {
             </div>
           ) : ''
       }
+      <Comments />
     </div>
   );
 };
