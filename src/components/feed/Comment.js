@@ -5,10 +5,12 @@ const Comment = () => {
   return (
     <div className="comment">
       <div className="commentTop">
-        <img src={userImage} alt="" />
-        <div className="commenternameDate">
-          <h2>Nemwel Boniface</h2>
-          <p>2 days ago</p>
+        <div className="commentTopLeft">
+          <img src={userImage} alt="" />
+          <div className="commenternameDate">
+            <h2>Nemwel Boniface</h2>
+            <p>2 days ago</p>
+          </div>
         </div>
         <button type="button">
             <i className="fa fa-ellipsis-v" aria-hidden="true" />

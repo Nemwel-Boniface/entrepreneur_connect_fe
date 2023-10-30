@@ -1,0 +1,68 @@
+/* stylelint-disable no-descending-specificity */
+:root {
+  --titleblue: rgba(2, 59, 86, 1);
+  --lightgreen: rgba(44, 188, 100, 1);
+  --herobg: rgba(225, 236, 240, 1);
+  --white: rgba(244, 246, 250, 1);
+  --paragraphGray: rgb(56, 58, 61);
+}
+
+
+
+/* Responsive design now */
+
+/* Tablet version */
+
+@media screen and (min-width: 748px) {
+  .comments .comment {
+    margin: 1rem 0;
+  }
+
+  .commentTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .commentTop .commentTopLeft {
+    display: flex;
+  }
+
+  .commentTop img {
+    width: 4rem;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .commentTop .commenternameDate h2 {
+    font-size: 18px;
+  }
+
+  .commentTop .commenternameDate p {
+    font-size: 15px;
+  }
+
+  .commentTop button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .commentTop button i {
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+
+  .commentTop button i:hover {
+    color: var(--lightgreen);
+  }
+}
+
+/* Desktop versions now */
+
+@media screen and (min-width: 1080px) {
+  /* Desktop versions now */
+}
