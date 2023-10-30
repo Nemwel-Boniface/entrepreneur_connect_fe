@@ -14,10 +14,15 @@ const Post = (props) => {
     tags,
     body,
     image,
-    likes_count, // Make sure the property names match the API response
+    likes_count,
   } = post;
 
   const [isActive, setActive] = useState(false);
+  const [ showComment, setShowComment ] = useState(false)
+
+  const toggleCommentSHow = () => {
+    setShowComment(!showComment)
+  }
 
   const toggleActiveClass = () => {
     setActive(!isActive);
@@ -88,7 +93,7 @@ const Post = (props) => {
             <i className="fa fa-heart" aria-hidden="true" />
             Like
           </button>
-          <button type="button">
+          <button type="button"onClick={toggleCommentSHow}>
             <i className="fa fa-comment" aria-hidden="true" />
             Comment
           </button>
@@ -107,7 +112,12 @@ const Post = (props) => {
             </div>
           ) : ''
       }
-      <Comments />
+      {
+        showComment
+        ?
+          <Comments />
+        : ''
+      }
     </div>
   );
 };
