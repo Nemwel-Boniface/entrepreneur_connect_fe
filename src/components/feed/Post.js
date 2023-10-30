@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removePost } from '../../redux/post/postSlice';
+import { deletePost, fetchPosts, removePost } from '../../redux/post/postSlice';
 
 const Post = (props) => {
   const { post } = props;
   const {
-    id,
+    post_id,
     author,
     created_at,
     tags,
@@ -30,12 +30,14 @@ const Post = (props) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(removePost({ id }));
+    // dispatch(removePost(id));
+    dispatch(deletePost(post_id))
     removeActive();
+    dispatch(fetchPosts())
   };
 
   return (
-    <div className="Post">
+    <div className="Post" id={post_id}>
       <div className="postHeader">
         <div className="postHeaderLeft">
           <img src={author.image} alt="" />

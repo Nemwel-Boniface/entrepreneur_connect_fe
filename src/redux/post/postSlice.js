@@ -52,12 +52,25 @@ export const createPost = createAsyncThunk('posts/postPosts', async (post) => {
 });
 
 export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
-  const deleteUrl = 'URL/postID';
+  const deleteUrl = `http://127.0.0.1:8000/api/posts/post/${id}/`;
   try {
-    const response = await axios.delete(deleteUrl, {
-      id,
+    const response = await fetch(deleteUrl, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+      },
     });
-    return response.data;
+    if (!response.ok) {
+      throw new Error('Failed to remove Post');
+    }
+
+    if (response.status === 204) {
+      return null;
+    } else {
+      const posts = await response.json();
+      return posts;
+    }
   } catch (error) {
     throw new Error('Cannot delete post');
   }
