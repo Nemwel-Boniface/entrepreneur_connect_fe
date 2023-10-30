@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddComment = () => {
+const AddComment = ({post_id}) => {
   return (
     <section className="AddComment">
       <form className="commentForm">

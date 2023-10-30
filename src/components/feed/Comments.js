@@ -2,11 +2,11 @@ import React from "react";
 import Comment from "./Comment";
 import AddComment from "./addComment";
 
-const Comments = () => {
+const Comments = ({post_id}) => {
   return (
     <section className="comments">
-      <Comment />
-      <AddComment />
+      <Comment post_id={post_id}/>
+      <AddComment post_id={post_id}/>
     </section>
   )
 }

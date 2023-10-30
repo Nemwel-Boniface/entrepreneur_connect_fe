@@ -115,7 +115,7 @@ const Post = (props) => {
       {
         showComment
         ?
-          <Comments />
+          <Comments post_id={post_id}/>
         : ''
       }
     </div>

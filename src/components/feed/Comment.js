@@ -1,7 +1,7 @@
 import React from "react";
 import userImage from '../../images/user/defaultUserIcon.png';
 
-const Comment = () => {
+const Comment = ({post_id}) => {
   return (
     <div className="comment">
       <div className="commentTop">
