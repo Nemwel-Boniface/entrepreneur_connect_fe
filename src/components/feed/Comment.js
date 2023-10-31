@@ -1,15 +1,22 @@
 import React from "react";
 import userImage from '../../images/user/defaultUserIcon.png';
 
-const Comment = ({post_id}) => {
+const Comment = (props) => {
+  const { commt } = props;
+  const {
+    id,
+    commenter,
+    comment,
+    created_at,
+  } = commt
   return (
-    <div className="comment">
+    <div className="comment" id={id}>
       <div className="commentTop">
         <div className="commentTopLeft">
-          <img src={userImage} alt="" />
+          <img src={commenter.image} alt="" />
           <div className="commenternameDate">
-            <h2>Nemwel Boniface</h2>
-            <p>2 days ago</p>
+            <h2>{commenter.username}</h2>
+            <p>{created_at}</p>
           </div>
         </div>
         <button type="button">
@@ -17,7 +24,7 @@ const Comment = ({post_id}) => {
           </button>
       </div>
       <div className="commentBody">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat. </p>
+        <p>{comment}</p>
       </div>
     </div>
   )
