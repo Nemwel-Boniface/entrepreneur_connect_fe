@@ -9,18 +9,24 @@ const initialState = {
   status: "null",
 }
 
-export const fetchComments = createAsyncThunk('comments/getComments', async (id) => {
+export const fetchComments = createAsyncThunk('comments/getComments', async () => {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/posts/comments/${id}/`)
-    if(!response.ok) {
-      throw new Error(`Failed to fetch comments.`)
+    const response = await fetch(`http://127.0.0.1:8000/api/posts/comment/`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch comments.`);
     }
-    const comments = await response.json()
-    return comments
+
+    const comments = await response.json();
+    return comments;
   } catch (error) {
-    throw new Error(`Failed to fetch comments: ${error.message}}`)
+    throw new Error(`Failed to fetch comments: ${error.message}`);
   }
-}) 
+});
 
 export const createComment = createAsyncThunk('comments/postComments', async (comment) => {
   try {
@@ -28,6 +34,7 @@ export const createComment = createAsyncThunk('comments/postComments', async (co
       comment: comment.comment,
       post: comment.post,
     }
+    console.log("form data", formData)
     const response = await fetch(createCommentsURL, {
       method: "POST",
       headers: {
