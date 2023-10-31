@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const createCommentsURL = `http://127.0.0.1:8000/api/posts/comments/`;
 
 const initialState = {
-  comment: [],
+  comments: [],
   isLoading: false,
   isError: false,
   status: "null",
@@ -70,6 +70,24 @@ const commentSlice = createSlice({
         comments: state.comments.filter((comment) => comment.id !== id)
       }
     }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchComments.pending, (state) => {
+        state.isLoading = true
+        state.isError = false
+      })
+      .addCase(fetchComments.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.isError = action.error.message
+      })
+      .addCase(fetchComments.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.status = "Successful"
+        state.isError = false
+        state.comments = action.payload
+      })
   }
 })
 
