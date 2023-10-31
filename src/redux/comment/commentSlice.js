@@ -9,6 +9,19 @@ const initialState = {
   status: "null",
 }
 
+export const fetchComments = createAsyncThunk('comments/getComments', async (id) => {
+  try {
+    const response = await fetch(`http://127.0.0.1:8000/api/posts/comments/${id}/`)
+    if(!response.ok) {
+      throw new Error(`Failed to fetch comments.`)
+    }
+    const comments = await response.json()
+    return comments
+  } catch (error) {
+    throw new Error(`Failed to fetch comments: ${error.message}}`)
+  }
+}) 
+
 export const createComment = createAsyncThunk('comments/postComments', async (comment) => {
   try {
     const formData = {
