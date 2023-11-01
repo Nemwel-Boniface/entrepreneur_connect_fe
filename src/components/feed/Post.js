@@ -123,6 +123,7 @@ const Post = (props) => {
 
 Post.propTypes = {
   post: PropTypes.shape({
+    post_id: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired,
     created_at: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,

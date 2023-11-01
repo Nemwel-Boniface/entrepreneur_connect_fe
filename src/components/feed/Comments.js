@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import Comment from './Comment';
 import AddComment from './addComment';
@@ -35,6 +36,10 @@ const Comments = ({ post_id }) => {
       <AddComment post_id={post_id} />
     </section>
   );
+};
+
+Comments.propTypes = {
+  post_id: PropTypes.number.isRequired, // You can specify the appropriate type
 };
 
 export default Comments;

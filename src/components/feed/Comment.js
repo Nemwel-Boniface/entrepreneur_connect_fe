@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Comment = (props) => {
   const { commt } = props;
@@ -28,6 +29,18 @@ const Comment = (props) => {
       </div>
     </div>
   );
+};
+
+Comment.propTypes = {
+  commt: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    commenter: PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+    }).isRequired,
+    comment: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Comment;

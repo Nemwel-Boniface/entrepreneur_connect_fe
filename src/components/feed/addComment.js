@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { createComment } from '../../redux/comment/commentSlice';
 
@@ -34,6 +35,10 @@ const AddComment = ({ post_id }) => {
       </form>
     </section>
   );
+};
+
+AddComment.propTypes = {
+  post_id: PropTypes.number.isRequired, // You can specify the appropriate type
 };
 
 export default AddComment;
