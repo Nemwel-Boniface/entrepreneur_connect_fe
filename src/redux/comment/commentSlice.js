@@ -1,24 +1,25 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+/* eslint-disable camelcase */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const createCommentsURL = `http://127.0.0.1:8000/api/posts/comments/`;
+const createCommentsURL = 'http://127.0.0.1:8000/api/posts/comments/';
 
 const initialState = {
   comments: [],
   isLoading: false,
   isError: false,
-  status: "null",
-}
+  status: 'null',
+};
 
 export const fetchComments = createAsyncThunk('comments/getComments', async () => {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/posts/comment/`, {
+    const response = await fetch('http://127.0.0.1:8000/api/posts/comment/', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('authToken')}`,
       },
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch comments.`);
+      throw new Error('Failed to fetch comments.');
     }
 
     const comments = await response.json();
@@ -33,70 +34,69 @@ export const createComment = createAsyncThunk('comments/postComments', async (co
     const formData = {
       comment: comment.comment,
       post: comment.post,
-    }
-    console.log("form data", formData)
+    };
     const response = await fetch(createCommentsURL, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        'content_type': 'application/json',
+        content_type: 'application/json',
         Authorization: `Bearer ${localStorage.getItem('authToken')}`,
       },
-      body: JSON.stringify(formData)
-    })
+      body: JSON.stringify(formData),
+    });
 
-    if(!response.ok) {
-      throw new Error(`Failed to create comment`)
+    if (!response.ok) {
+      throw new Error('Failed to create comment');
     }
-    const addedComment = response.json()
+    const addedComment = response.json();
     return addedComment;
-  } catch(err) {
-    return `Failed to create comment ${err.message}`
+  } catch (err) {
+    return `Failed to create comment ${err.message}`;
   }
-})
+});
 
 const commentSlice = createSlice({
-  name: "comments",
+  name: 'comments',
   initialState,
   reducers: {
     addComment: (state, action) => {
-      const { comment, post_od } = action.payload;
+      const { comment, post_id } = action.payload;
       const commentObject = {
         comment,
         post_id,
-      }
+      };
 
       return {
         ...state,
-        comments: [...state.comments, commentObject]
-      }
+        comments: [...state.comments, commentObject],
+      };
     },
     removeComment: (state, action) => {
       const { id } = action.payload;
       return {
         ...state,
-        comments: state.comments.filter((comment) => comment.id !== id)
-      }
-    }
+        comments: state.comments.filter((comment) => comment.id !== id),
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchComments.pending, (state) => {
-        state.isLoading = true
-        state.isError = false
+        state.isLoading = true;
+        state.isError = false;
       })
       .addCase(fetchComments.rejected, (state, action) => {
-        state.isLoading = false
-        state.isError = true
-        state.isError = action.error.message
+        state.isLoading = false;
+        state.isError = true;
+        state.isError = action.error.message;
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
-        state.isLoading = false
-        state.status = "Successful"
-        state.isError = false
-        state.comments = action.payload
-      })
-  }
-})
+        state.isLoading = false;
+        state.status = 'Successful';
+        state.isError = false;
+        state.comments = action.payload;
+      });
+  },
+});
 
 export const { addComment, removeComment } = commentSlice.actions;
 export default commentSlice.reducer;

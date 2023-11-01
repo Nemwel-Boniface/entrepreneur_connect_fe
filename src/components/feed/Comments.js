@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable camelcase */
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Comment from "./Comment";
-import AddComment from "./addComment";
+import Comment from './Comment';
+import AddComment from './addComment';
 import { fetchComments } from '../../redux/comment/commentSlice';
 
-const Comments = ({post_id}) => {
+const Comments = ({ post_id }) => {
   const dispatch = useDispatch();
   const { comments, isLoading, isError } = useSelector((store) => store.comments);
-  const [commentsFetched, setcommentsFetched] = useState(false);
-  
+
   useEffect(() => {
     dispatch(fetchComments());
   }, [dispatch]);
-  
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -27,15 +26,15 @@ const Comments = ({post_id}) => {
   }
 
   // Filter comments based on the post_id
-  const filteredComments = comments.filter(comment => comment.post === post_id);
+  const filteredComments = comments.filter((comment) => comment.post === post_id);
   return (
     <section className="comments">
-      {filteredComments.map(commt => (
+      {filteredComments.map((commt) => (
         <Comment key={commt.id} commt={commt} />
       ))}
-      <AddComment post_id={post_id}/>
+      <AddComment post_id={post_id} />
     </section>
-  )
-}
+  );
+};
 
 export default Comments;

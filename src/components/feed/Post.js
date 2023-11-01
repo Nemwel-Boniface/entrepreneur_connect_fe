@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deletePost, fetchPosts, removePost } from '../../redux/post/postSlice';
+import { deletePost, fetchPosts } from '../../redux/post/postSlice';
 import Comments from './Comments';
 
 const Post = (props) => {
@@ -18,11 +18,11 @@ const Post = (props) => {
   } = post;
 
   const [isActive, setActive] = useState(false);
-  const [ showComment, setShowComment ] = useState(false)
+  const [showComment, setShowComment] = useState(false);
 
   const toggleCommentSHow = () => {
-    setShowComment(!showComment)
-  }
+    setShowComment(!showComment);
+  };
 
   const toggleActiveClass = () => {
     setActive(!isActive);
@@ -37,9 +37,9 @@ const Post = (props) => {
 
   const handleDelete = () => {
     // dispatch(removePost(id));
-    dispatch(deletePost(post_id))
+    dispatch(deletePost(post_id));
     removeActive();
-    dispatch(fetchPosts())
+    dispatch(fetchPosts());
   };
 
   return (
@@ -93,7 +93,7 @@ const Post = (props) => {
             <i className="fa fa-heart" aria-hidden="true" />
             Like
           </button>
-          <button type="button"onClick={toggleCommentSHow}>
+          <button type="button" onClick={toggleCommentSHow}>
             <i className="fa fa-comment" aria-hidden="true" />
             Comment
           </button>
@@ -114,9 +114,8 @@ const Post = (props) => {
       }
       {
         showComment
-        ?
-          <Comments post_id={post_id}/>
-        : ''
+          ? <Comments post_id={post_id} />
+          : ''
       }
     </div>
   );

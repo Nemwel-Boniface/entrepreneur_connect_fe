@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const createPostURL = 'http://127.0.0.1:8000/api/posts/post/';
 
@@ -67,10 +66,9 @@ export const deletePost = createAsyncThunk('posts/deletePost', async (id) => {
 
     if (response.status === 204) {
       return null;
-    } else {
-      const posts = await response.json();
-      return posts;
     }
+    const posts = await response.json();
+    return posts;
   } catch (error) {
     throw new Error('Cannot delete post');
   }

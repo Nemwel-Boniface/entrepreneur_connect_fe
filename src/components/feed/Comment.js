@@ -1,5 +1,5 @@
-import React from "react";
-import userImage from '../../images/user/defaultUserIcon.png';
+/* eslint-disable camelcase */
+import React from 'react';
 
 const Comment = (props) => {
   const { commt } = props;
@@ -8,7 +8,7 @@ const Comment = (props) => {
     commenter,
     comment,
     created_at,
-  } = commt
+  } = commt;
   return (
     <div className="comment" id={id}>
       <div className="commentTop">
@@ -20,14 +20,14 @@ const Comment = (props) => {
           </div>
         </div>
         <button type="button">
-            <i className="fa fa-ellipsis-v" aria-hidden="true" />
-          </button>
+          <i className="fa fa-ellipsis-v" aria-hidden="true" />
+        </button>
       </div>
       <div className="commentBody">
         <p>{comment}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Comment;
